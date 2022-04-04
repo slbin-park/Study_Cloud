@@ -1,6 +1,6 @@
 {
 	"Set Base React Form": {
-		"prefix": "tye",
+		"prefix": "style",
 		"body": [
             "import React from 'react';",
             "import styled, { css } from 'styled-components';",
