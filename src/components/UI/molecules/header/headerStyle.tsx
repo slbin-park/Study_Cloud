@@ -4,18 +4,30 @@ import { HeaderType } from './headerType';
 
 const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
   ${(props) => {
-
+    const middle = props.theme.palette.$color_middle;
   return css`
-    background-repeat: no-repeat;
+    display:flex;
     width: 100%;
-    height: 45px;
-    border: none;
-    padding: 5px 10px;
-    font-size: 1em;
-    font-weight: 500;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.3s;
+    height: 70px;
+    background-color: ${middle};
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+
+    .title_div{
+        color:white;
+        margin-left:20px;
+        font-size:20px;
+    }
+    .Icon_div{
+        margin-right: 20px;
+        display:flex;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        height:100%
+    }
   `}}
   ;
 `;

@@ -27,13 +27,14 @@ export default {
 const Template: Story<ButtonType> = (args) => (
   <>
     <span className={'info'}>Primary</span>
+    <div style={{width : '300px'}}>
     <ButtonComponent
       children={args.children}
       type={args.type}
       {...args}
       width = 'blue'
     />
-
+    </div>
   </>
 );
 

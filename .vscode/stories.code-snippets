@@ -1,0 +1,30 @@
+{
+	"Set Base React Form": {
+		"prefix": "stories",
+		"body": [
+            "import React, { useEffect, useState, useRef } from 'react';",
+            "import { Meta, Story } from '@storybook/react';",
+            "",
+            "import Select from './select_component';",
+            "",
+            "export default {",
+              "title: 'Atoms/Select',",
+              "component: Select,",
+              "parameters: {},",
+            "} as Meta;",
+            "",
+            "const Template: Story<any> = (args) => (",
+              "<>",
+                    "<Select {...args} isFail={args.isFail} />",
+              "</>",
+            ");",
+            "",
+            "export const Default = Template.bind({});",
+            "Default.parameters = {};",
+            "Default.args = {",
+            "};",
+            
+		],
+		"description": "Set Base indexfrom"
+	}
+}
