@@ -1,0 +1,11 @@
+{
+	"Set Base React Form": {
+		"prefix": "tye",
+		"body": [
+            "export interface $Name Type {",
+            "",
+            "}",
+		],
+		"description": "Set Base indexfrom"
+	}
+}

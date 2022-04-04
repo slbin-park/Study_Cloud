@@ -1,0 +1,22 @@
+{
+	"Set Base React Form": {
+		"prefix": "tye",
+		"body": [
+            "import React from 'react';",
+            "import styled, { css } from 'styled-components';",
+            "import { $Name Type } from './$Name Type';",
+            "",
+            "const $Name Style = styled.div.attrs((props) => ({}))<$Name Type>`",
+            "${(props) => {",
+            "    const middle = props.theme.palette.$color_middle;",
+            "return css`",
+              "`}}",
+              ";",
+            "`;",
+            "",
+            "export default $Name Style;",
+            
+		],
+		"description": "Set Base indexfrom"
+	}
+}
