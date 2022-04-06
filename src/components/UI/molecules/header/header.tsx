@@ -7,6 +7,9 @@ import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import StyledHeader from './headerStyle';
+import Atoms, { Input, Select } from '../../atoms/index';
+
+
 
 const ButtonComponent: React.FC<any> = (props) => {
   return (
@@ -15,7 +18,8 @@ const ButtonComponent: React.FC<any> = (props) => {
             학습관리 페이지
         </div>
         <div className='Icon_div'>
-        <FontAwesomeIcon icon={faSearch} style={{height:'40%',marginRight:'10px',color:'white'}}/>
+          <Input />
+        <FontAwesomeIcon icon={faSearch} style={{height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
         <FontAwesomeIcon icon={faBars} style={{height:'40%',color:'white'}}/>
         </div>
     </StyledHeader>
