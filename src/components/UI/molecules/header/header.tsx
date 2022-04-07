@@ -7,7 +7,7 @@ import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import StyledHeader from './headerStyle';
-import Atoms, { Input, Select } from '../../atoms/index';
+import Atoms, { Input } from '../../atoms/index';
 
 
 

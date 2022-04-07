@@ -7,7 +7,7 @@ ${(props) => {
     const middle = props.theme.palette.color_middle;
 return css`
       width: 100%;
-      height: 45px;
+      height: 40px;
       padding: 0px 10px;
       font-size: 1em;
       font-weight: 500;
