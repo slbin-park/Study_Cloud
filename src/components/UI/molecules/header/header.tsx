@@ -19,8 +19,8 @@ const ButtonComponent: React.FC<any> = (props) => {
         </div>
         <div className='Icon_div'>
           <Input />
-        <FontAwesomeIcon icon={faSearch} style={{height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
-        <FontAwesomeIcon icon={faBars} style={{height:'40%',color:'white'}}/>
+        <FontAwesomeIcon icon={faSearch} style={{cursor : 'pointer',height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
+        <FontAwesomeIcon icon={faBars} style={{cursor : 'pointer',height:'40%',color:'white'}}/>
         </div>
     </StyledHeader>
   );

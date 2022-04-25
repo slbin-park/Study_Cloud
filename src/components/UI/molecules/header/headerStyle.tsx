@@ -5,6 +5,8 @@ import { HeaderType } from './headerType';
 const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
+    const high = props.theme.palette.$color_high;
+
   return css`
     display:flex;
     width: 100%;
@@ -26,7 +28,8 @@ const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
         justify-content: flex-end;
         align-content: center;
         align-items: center;
-        height:100%
+        height:100%;
+        
     }
   `}}
   ;

@@ -13,8 +13,8 @@ export default {
 const Template: Story<HeaderType> = (args) => (
   <>
     <span className={'info'}>Primary</span>
-    <HeaderComponent
-    />
+    <HeaderComponent {...args}
+/>
 
   </>
 );
@@ -22,5 +22,4 @@ const Template: Story<HeaderType> = (args) => (
 export const Default = Template.bind({});
 Default.parameters = {};
 Default.args = {
-
 };

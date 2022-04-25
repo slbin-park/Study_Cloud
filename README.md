@@ -18,7 +18,8 @@
 
 # 1. 사용 기술 ( 프론트 )
 ## 1.1 React
-
+JavaScript 라이브러리 
+싱글 페이지 어플리케이션의 UI를 생성하는데 집중한 라이브러리
 <br/>
 
 
@@ -48,7 +49,7 @@
 <br/>
 <br/>
 
-## Storybook
+## 1.5 Storybook
 <br/>
 
 # 2 사용한 디자인패턴
@@ -88,3 +89,25 @@ index는 각 폴더 명이 주소가 된다.
 
 ## 3.4 UI폴더
 Storybook을 이용하여 UI를 만드는 폴더
+
+
+├─pages
+│ ├─ api
+│ └─ index.js
+├─public
+│
+├─src
+│ ├─ components
+│ │ ├─ UI
+│ ├─ └─ atoms
+│ ├───└─index.js
+│ ├─── molecules
+│ ├───└─index.js
+│ ├─── organisms
+│ ├───└─index.js
+│ ├─── template
+│ └───└─index.js
+│ └─ index.js
+│
+├─style
+└─ global.css
