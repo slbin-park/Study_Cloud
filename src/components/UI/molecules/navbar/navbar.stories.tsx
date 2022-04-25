@@ -7,6 +7,7 @@ export default {
 title: 'molecules/NavBar ',
 component: NavBar ,
 parameters: {},
+
 } as Meta;
 
 const Template: Story<any> = (args) => (
@@ -16,6 +17,7 @@ const Template: Story<any> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.parameters = {};
+Default.parameters = {
+};
 Default.args = {
 };

@@ -8,11 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import StyledHeader from './headerStyle';
 import Atoms, { Input } from '../../atoms/index';
+import Molecules , {Board,IconText,NavBar} from '../../molecules/index'
 
 
-
-const ButtonComponent: React.FC<any> = (props) => {
+const HeaderComponent: React.FC<any> = (props) => {
+  const [hamburger,set_hamburger] = useState(false);
   return (
+    <>
     <StyledHeader onClick={props.onClick} {...props}>
         <div className='title_div'>
             학습관리 페이지
@@ -20,10 +22,16 @@ const ButtonComponent: React.FC<any> = (props) => {
         <div className='Icon_div'>
           <Input />
         <FontAwesomeIcon icon={faSearch} style={{cursor : 'pointer',height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
-        <FontAwesomeIcon icon={faBars} style={{cursor : 'pointer',height:'40%',color:'white'}}/>
+        <FontAwesomeIcon onClick={()=>set_hamburger(!hamburger)} icon={faBars} style={{cursor : 'pointer',height:'40%',color:'white'}}/>
         </div>
+        {hamburger ? <NavBar {...props}/> : ''}
+
     </StyledHeader>
+    <Board head='공지사항'></Board>
+    <IconText icon='user'/>
+    {/* <NavBar/> */}
+    </>
   );
 };
 
-export default ButtonComponent;
+export default HeaderComponent;

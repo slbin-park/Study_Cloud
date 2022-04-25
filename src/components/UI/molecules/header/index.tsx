@@ -4,8 +4,14 @@ import HeaderComponent from './header';
 import {HeaderType} from './headerType'
 
 
-const Button: React.FC<HeaderType> = (props, {}: HeaderType) => (
-  <HeaderComponent {...props} />
-);
+const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
+  
 
-export default Button;
+  return(
+    <>
+      <HeaderComponent {...props} />
+    </>
+  )
+};
+
+export default Header;

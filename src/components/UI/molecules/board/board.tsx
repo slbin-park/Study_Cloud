@@ -11,7 +11,7 @@ import BoardStyle from './boardStyle';
 import { BoardType } from './boardType';
 
 
-import Molcules, { LineText } from '../../molecules/index';
+import Molecules, { LineText } from '../../molecules/index';
 
 
 const BoardComponent: React.FC<any> = (props) => {
