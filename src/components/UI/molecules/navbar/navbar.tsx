@@ -10,9 +10,10 @@ import NavBarStyle from './navbarStyle';
 import Molecules, { IconText } from '../../molecules/index';
 
 const NavBarComponent: React.FC<any> = (props) => {
+    
 return (
     <>
-        <NavBarStyle>
+        <NavBarStyle >
             <div className='menu'>
             <IconText icon='user'/>
             <IconText icon='notice'/>

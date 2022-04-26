@@ -1,12 +1,12 @@
 import React from 'react';
-import HeaderComponent  from '../src/components/pages/header/index';
+import {Mainpage} from '../src/components/UI/pages/index'
 
 
 
 export default function Home() {
   return (
     <div >
-        <HeaderComponent/>
+      <Mainpage/>
     </div>
   );
 }

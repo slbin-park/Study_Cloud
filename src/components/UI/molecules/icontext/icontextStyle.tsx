@@ -11,7 +11,7 @@ return css`
     padding-bottom:10px;
     margin-bottom:5px;
     margin-top:5px;
-    height:30px;
+    height:50px;
     padding :7px;
     .icon_div{
         color :${middle} ;

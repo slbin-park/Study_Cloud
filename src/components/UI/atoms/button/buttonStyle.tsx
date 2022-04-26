@@ -4,11 +4,12 @@ import { ButtonType } from './buttonType';
 
 const StyledButton = styled.button.attrs((props) => ({}))<ButtonType>`
   ${(props) => {
-    const color = props.width;
-
+    const high = props.theme.palette.$color_high;
   return css`
+    color:white;
+    background-color : ${high};
+    border-radius: 25px;
     background-repeat: no-repeat;
-    color: ${color};
     width: 100%;
     height: 45px;
     border: none;

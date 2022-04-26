@@ -11,7 +11,7 @@ const Globals = {
         // 키 컬러
         $color_base : '#ffad85',
         $color_middle : '#ff8040',
-        $color_high : 'f96c00',
+        $color_high : '#f96c00',
 
         // 회색
         $color_gray : '#f0f3f5',

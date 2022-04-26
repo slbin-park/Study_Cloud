@@ -27,8 +27,6 @@ const HeaderComponent: React.FC<any> = (props) => {
         {hamburger ? <NavBar {...props}/> : ''}
 
     </StyledHeader>
-    <Board head='공지사항'></Board>
-    <IconText icon='user'/>
     {/* <NavBar/> */}
     </>
   );
