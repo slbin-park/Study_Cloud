@@ -7,7 +7,7 @@ import {faUserCircle } from '@fortawesome/free-regular-svg-icons'; // outline �
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import {Button} from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
-
+import {Card} from '../../molecules/index'
 const MainPageComponent: React.FC<any> = (props) => {
 return (
     <>
@@ -33,17 +33,9 @@ return (
                 <div className = 'til_head'>
                     오늘 한 일
                 </div>
-                <div>
-                    1번
-                </div>
-                <div>
-                    1번
-                </div>
-                <div>
-                    1번
-                </div>
-                <div>
-                    1번
+                <div className='til_card'>
+                <Card/>
+                <Card/>
                 </div>
             </div>
         </MainPageStyle>

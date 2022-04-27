@@ -43,7 +43,9 @@ return css`
         top: 22Px;
     }
     .til{
+        margin: 20px;
         margin-top :30px;
+        
         width : 100%;
         border-style : solid;
         border-color : ${middle};
@@ -54,6 +56,9 @@ return css`
         .til_head{
             margin-top : 5px;
             color : ${middle};
+        }
+        .til_card{
+            width:80%;
         }
     }
     

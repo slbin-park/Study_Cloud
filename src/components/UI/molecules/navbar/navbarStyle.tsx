@@ -6,7 +6,7 @@ const NavBarStyle = styled.div.attrs((props) => ({}))<NavBarType>`
 ${(props) => {
     const middle = props.theme.palette.$color_middle;
     return css`
-    
+        transition: all 0.3s;
         background-color: white;
         z-index: 9999;
 		border-left: 2px solid ${middle};

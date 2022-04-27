@@ -6,8 +6,9 @@ const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
     const high = props.theme.palette.$color_high;
-
+    
   return css`
+		position: fixed;
     display:flex;
     width: 100%;
     height: 70px;
@@ -15,7 +16,6 @@ const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
     justify-content: space-between;
     align-content: center;
     align-items: center;
-
 
     .title_div{
         color:white;

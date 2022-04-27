@@ -24,7 +24,7 @@ const HeaderComponent: React.FC<any> = (props) => {
         <FontAwesomeIcon icon={faSearch} style={{cursor : 'pointer',height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
         <FontAwesomeIcon onClick={()=>set_hamburger(!hamburger)} icon={faBars} style={{cursor : 'pointer',height:'40%',color:'white'}}/>
         </div>
-        {hamburger ? <NavBar {...props}/> : ''}
+        {hamburger ? <NavBar {...props} set_hamburger={set_hamburger}/> : ''}
 
     </StyledHeader>
     {/* <NavBar/> */}

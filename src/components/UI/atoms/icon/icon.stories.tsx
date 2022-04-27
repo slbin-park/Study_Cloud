@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import Card  from './card';
+import Icon  from './icon';
 
 export default {
-title: 'molecules/Card ',
-component: Card ,
+title: 'Atoms/Icon ',
+component: Icon ,
 parameters: {},
 } as Meta;
 
 const Template: Story<any> = (args) => (
 <>
-<Card  {...args}  />
+<Icon  {...args}  />
 </>
 );
 

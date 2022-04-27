@@ -13,6 +13,7 @@ return css`
     margin-top:5px;
     height:50px;
     padding :7px;
+    cursor:pointer;
     .icon_div{
         color :${middle} ;
         height : 100% ;

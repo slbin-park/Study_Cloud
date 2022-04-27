@@ -8,17 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import NavBarStyle from './navbarStyle';
 import Molecules, { IconText } from '../../molecules/index';
-
 const NavBarComponent: React.FC<any> = (props) => {
-    
 return (
     <>
-        <NavBarStyle >
-            <div className='menu'>
-            <IconText icon='user'/>
+        <NavBarStyle onClick={()=>props.set_hamburger(false)}>
+            <div className='menu' >
+            <IconText icon='user' href='/'/>
             <IconText icon='notice'/>
             <IconText icon='community'/>
-            <IconText icon='study'/>
+            <IconText icon='study' href='/study'/>
             <IconText icon='info'/>
             <IconText icon='logout'/>
             </div>

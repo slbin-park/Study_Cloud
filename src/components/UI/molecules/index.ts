@@ -3,13 +3,17 @@ import LineText from './linetext';
 import IconText from './icontext';
 import NavBar from './navbar';
 import Board from './board';
+import Card from './card';
+import Calendar from './calendar';
 
 const Molecules = {
     Header,
     LineText,
     IconText,
     NavBar,
-    Board
+    Board,
+    Card,
+    Calendar
 };
 
 
@@ -20,5 +24,7 @@ export {
     LineText,
     IconText,
     NavBar,
-    Board
+    Board,
+    Card,
+    Calendar
 };

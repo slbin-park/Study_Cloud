@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import Card  from './card';
+import RecordPage  from './recordpage';
 
 export default {
-title: 'molecules/Card ',
-component: Card ,
+title: 'pages/RecordPage ',
+component: RecordPage ,
 parameters: {},
 } as Meta;
 
 const Template: Story<any> = (args) => (
 <>
-<Card  {...args}  />
+<RecordPage  {...args}  />
 </>
 );
 
