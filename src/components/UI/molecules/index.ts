@@ -5,7 +5,7 @@ import NavBar from './navbar';
 import Board from './board';
 import Card from './card';
 import Calendar from './calendar';
-
+import Timer from './timer'
 const Molecules = {
     Header,
     LineText,
@@ -13,7 +13,8 @@ const Molecules = {
     NavBar,
     Board,
     Card,
-    Calendar
+    Calendar,
+    Timer,
 };
 
 
@@ -26,5 +27,6 @@ export {
     NavBar,
     Board,
     Card,
-    Calendar
+    Calendar,
+    Timer,
 };

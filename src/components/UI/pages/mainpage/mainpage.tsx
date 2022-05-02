@@ -1,30 +1,42 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import axios from 'axios';
+import moment from 'moment';
+
 import {} from '@fortawesome/free-brands-svg-icons'; // 브랜드 아이콘
 import {faArrowLeft,faArrowRight} from '@fortawesome/free-solid-svg-icons'; // fill 타입 아이콘
 import {faUserCircle } from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import {Button} from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
-import {Card} from '../../molecules/index'
+import {Card,Timer} from '../../molecules/index'
+
 const MainPageComponent: React.FC<any> = (props) => {
+    
+    const [timer,set_timer] = useState(false)
+
+    const [getMoment, setMoment] = useState(moment());
+    const today = getMoment;
 return (
     <>
         <MainPageStyle>
             <div className = 'head_box'>
-                <FontAwesomeIcon icon={faUserCircle} style={{height:'70px',color:'#ffad85'}}/>
+                <FontAwesomeIcon icon={faUserCircle}  style={{height:'70px',color:'#ffad85'}}/>
             <div className = 'date' >
-            <FontAwesomeIcon icon={faArrowLeft} style={{height:'25px'}}/>
-            2022년 02월 22일
-            <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}}/>
+            
+            <FontAwesomeIcon icon={faArrowLeft} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().subtract(1, 'days')) }}/>
+            
+            {today.format('YYYY 년 MM 월 DD 일')}
+            
+            <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().add(1, 'days')) }}/>
+            
             </div>
             <div className = 'time'>
-                00 : 00 : 00
+                <Timer timer = {timer}/>
             </div>
-            <div className = 'start'>
-                <Button>
-                    시작
+            <div className = 'start' onClick={()=>set_timer(!timer)}>
+                <Button >
+                    {timer ? '종료' : '시작'}
                 </Button>
             </div>
             </div>

@@ -5,6 +5,7 @@ import {} from '@fortawesome/free-brands-svg-icons'; // 브랜드 아이콘
 import {faSearch,faBars} from '@fortawesome/free-solid-svg-icons'; // fill 타입 아이콘
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
+import Link from 'next/link'
 
 import StyledHeader from './headerStyle';
 import Atoms, { Input } from '../../atoms/index';
@@ -16,9 +17,11 @@ const HeaderComponent: React.FC<any> = (props) => {
   return (
     <>
     <StyledHeader onClick={props.onClick} {...props}>
+      <Link href='/'>
         <div className='title_div'>
             학습관리 페이지
         </div>
+        </Link>
         <div className='Icon_div'>
           <Input />
         <FontAwesomeIcon icon={faSearch} style={{cursor : 'pointer',height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>

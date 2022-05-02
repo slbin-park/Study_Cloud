@@ -21,6 +21,7 @@ const HeaderStyle = styled.div.attrs((props) => ({}))<HeaderType>`
         color:white;
         margin-left:20px;
         font-size:20px;
+        cursor:pointer;
     }
     .Icon_div{
         margin-right: 20px;

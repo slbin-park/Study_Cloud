@@ -18,7 +18,6 @@ return css`
         height:50px;
     }
     .til{
-        margin: 20px;
         margin-top :30px;
         
         width : 100%;
