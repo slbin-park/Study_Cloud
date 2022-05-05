@@ -16,8 +16,8 @@ const TimerComponent: React.FC<any> = (props) => {
     useEffect(() => {
       const interval = setInterval(() => {
           if (props.timer === false) clearInterval(interval);
-          else setms(ms + 1);
-      }, 1);
+          else setms(ms + 1000);
+      }, 1000);
       return () => clearInterval(interval);
     });
     const mm = Math.floor(((ms/1000) % HOUR) / 60);

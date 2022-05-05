@@ -13,10 +13,12 @@ import Molecules , {Board,IconText,NavBar} from '../../molecules/index'
 
 
 const HeaderComponent: React.FC<any> = (props) => {
-  const [hamburger,set_hamburger] = useState(false);
+  const hamburger = props.hamburger;
+  const set_hamburger = props.set_hamburger;
+
   return (
     <>
-    <StyledHeader onClick={props.onClick} {...props}>
+    <StyledHeader  {...props}>
       <Link href='/'>
         <div className='title_div'>
             학습관리 페이지

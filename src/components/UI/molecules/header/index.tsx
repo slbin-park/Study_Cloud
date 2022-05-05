@@ -6,10 +6,11 @@ import {HeaderType} from './headerType'
 
 const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
   
+  const [hamburger,set_hamburger] = useState(false);
 
   return(
     <>
-      <HeaderComponent {...props} />
+      <HeaderComponent hamburger={hamburger} set_hamburger = {set_hamburger} {...props} />
     </>
   )
 };
