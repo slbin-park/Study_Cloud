@@ -19,7 +19,7 @@ const StyledSelect = styled.select.attrs((props) => ({
       outline: none;
       will-change: border;
       text-indent: 6px;
-
+      border : none;
       border-radius: 0px;
 
       &:focus {
