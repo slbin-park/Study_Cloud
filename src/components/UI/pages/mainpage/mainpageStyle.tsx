@@ -35,6 +35,10 @@ return css`
     .time{
         padding : 10px;
         color : white;
+        width:100%;
+        display:flex;
+        align-content:center;
+        justify-content: center;
     }
 
     .start{

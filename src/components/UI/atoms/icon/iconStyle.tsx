@@ -11,6 +11,11 @@ return css`
     cursor:pointer;
     border-radius:25px;
     box-shadow: 0px 0px 5px ;
+    :active{
+      margin-left:2px;
+      margin-top:2px;
+      box-shadow: none;
+    }
 `}}
 ;
 `;

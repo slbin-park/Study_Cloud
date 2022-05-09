@@ -23,7 +23,7 @@ return css`
     justify-content: center;
     height: 5%;
     align-items: center;
-    margin-bottom:5px;
+    margin-bottom:10px;
     .calendar_button{
         cursor: pointer;
         margin:5px;

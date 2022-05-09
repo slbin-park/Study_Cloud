@@ -8,7 +8,18 @@ ${(props) => {
 return css`
     display:flex;
     justify-content: center;
-    
+    flex-direction : column;
+    height:80vh;
+    align-items: center;
+    width:100%;
+    .line_text{
+        width:80%;
+        height:20%;
+        padding-bottom:5%;
+    }
+    .memo{
+        width:80%;
+    }
 `}}
 ;
 `;

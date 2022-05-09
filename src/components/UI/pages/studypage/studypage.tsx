@@ -6,12 +6,29 @@ import {faSearch,faBars} from '@fortawesome/free-solid-svg-icons'; // fill 타�
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import StudyPageStyle from './studypageStyle';
+import {InputText} from '../../molecules';
+import {Button} from '../../atoms/button';
 
 const StudyPageComponent: React.FC<any> = (props) => {
 return (
 <>
     <StudyPageStyle>
-        일정
+        <div className='line_text'> 
+        <InputText type='제목'/>
+        </div>
+        <div className='line_text'> 
+        <InputText type='시작'/>
+        
+        </div>
+        <div className='line_text'> 
+        <InputText type='종료'/>
+        </div>
+        <div className='memo'> 
+        <InputText type='메모'/>
+        </div>
+
+
+
     </StudyPageStyle>
 </>
 );

@@ -13,7 +13,7 @@ const InputTextComponent: React.FC<any> = (props) => {
     const [getMoment, setMoment] = useState(moment());
 return (
     <>
-        <InputTextStyle>
+        <InputTextStyle {...props}>
         {props.type == '제목'? <>
         <div className='text'>제목</div>
         
@@ -22,33 +22,49 @@ return (
         {props.type == '시작'? 
         <>
         <div className='text'>시작</div>
-         {getMoment.format('YYYY.MM.DD')}
-        오전
+        <div>{getMoment.format('YYYY.MM.DD')}</div>
+        
+        <div className='select'>
+        <Select placeholder='오전' item={['오전','오후']}></Select>
+        </div>
+
         <div className='select'>
         <Select placeholder='0' item={time}></Select>
         </div>
+        시
         <div className='select'>
         <Select placeholder='0' item={minute}></Select>
         </div>
+        분
         </>:''}
 
         {props.type == '종료'? 
         <>
                 <div className='text'>종료</div>
- {getMoment.format('YYYY.MM.DD')}
-        오전
+        <div>{getMoment.format('YYYY.MM.DD')}</div>
+
         <div className='select'>
+        <Select placeholder='오전' item={['오전','오후']}></Select>
+        </div>
+        <div className='select'>
+            
         <Select placeholder='0' item={time}></Select>
         </div>
+        시
         <div className='select'>
         <Select placeholder='0' item={minute}></Select>
         </div>
+        분
         </>:''}
 
         {props.type == '메모'? 
         <>
-        메모 
-        <input type='text'/>
+        <div className='memo'>
+            메모 
+            <div className='input_memo'>
+            <textarea className='memo_textarea'/>
+            </div>
+        </div>
         </>:''}
         </InputTextStyle>
     </>

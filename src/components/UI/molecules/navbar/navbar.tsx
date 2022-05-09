@@ -16,7 +16,7 @@ return (
             <IconText icon='user' href='/'/>
             <IconText icon='notice'/>
             <IconText icon='community'/>
-            <IconText icon='study' href='/study'/>
+            <IconText icon='study' href='/record'/>
             <IconText icon='info'/>
             <IconText icon='logout'/>
             </div>

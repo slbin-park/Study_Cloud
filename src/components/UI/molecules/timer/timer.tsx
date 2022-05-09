@@ -22,15 +22,15 @@ const TimerComponent: React.FC<any> = (props) => {
     });
     const mm = Math.floor(((ms/1000) % HOUR) / 60);
     const hh = Math.floor((ms/1000) / HOUR);
-    const ss = parseInt((ms/1000) % 60);
+    const ss = Math.floor((ms/1000) % 60);
 
     const formatTime = (time: number) => (time >= 10 ? time : '0'.concat(time.toString()));
     const formatms = (time: number) => (time >= 100 ? time%1000 : '0'.concat(time.toString()));
 
 
     return (
-        <div>
-            [&nbsp;{formatTime(hh)}:{formatTime(mm)}:{formatTime(ss)} : {formatms(ms)} &nbsp; ]
+        <div className='timer'>
+            {formatTime(hh)}:{formatTime(mm)}:{formatTime(ss)}
         </div>
   );
 };

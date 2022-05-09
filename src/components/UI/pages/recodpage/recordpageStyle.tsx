@@ -16,6 +16,7 @@ return css`
         margin-bottom:30px;
         width:50px;
         height:50px;
+        
     }
     .til{
         margin-top :30px;
@@ -34,6 +35,7 @@ return css`
         .til_card{
             width:80%;
         }
+        padding-bottom : 100px;
     }
 `}}
 ;

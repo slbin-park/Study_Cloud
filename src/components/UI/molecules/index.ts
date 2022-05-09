@@ -6,6 +6,8 @@ import Board from './board';
 import Card from './card';
 import Calendar from './calendar';
 import Timer from './timer'
+import InputText from './inputtext'
+
 const Molecules = {
     Header,
     LineText,
@@ -15,6 +17,7 @@ const Molecules = {
     Card,
     Calendar,
     Timer,
+    InputText,
 };
 
 
@@ -29,4 +32,5 @@ export {
     Card,
     Calendar,
     Timer,
+    InputText,
 };

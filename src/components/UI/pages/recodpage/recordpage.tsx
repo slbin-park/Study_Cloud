@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import RecordPageStyle from './recordpageStyle';
 import {Icon} from '../../atoms/index';
+import Link from 'next/link'
 
 import {Calendar , Card} from '../../molecules/index';
 const RecordPageComponent: React.FC<any> = (props) => {
@@ -24,9 +25,11 @@ return (
         <Card/>
         </div>
     </div>
+    <Link href='/study'>
     <div className = 'Icon'>
     <Icon/>
     </div>
+    </Link>
 </RecordPageStyle>
 </>
 );
