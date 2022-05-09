@@ -16,7 +16,6 @@ const MainPageComponent: React.FC<any> = (props) => {
     const [timer,set_timer] = useState(false)
 
     const [getMoment, setMoment] = useState(moment());
-    const today = getMoment;
 return (
     <>
         <MainPageStyle>
@@ -26,7 +25,7 @@ return (
             
             <FontAwesomeIcon icon={faArrowLeft} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().subtract(1, 'days')) }}/>
             
-            {today.format('YYYY 년 MM 월 DD 일')}
+            {getMoment.format('YYYY 년 MM 월 DD 일')}
             
             <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().add(1, 'days')) }}/>
             

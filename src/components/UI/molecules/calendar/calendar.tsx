@@ -34,7 +34,7 @@ return (
 );
 };
 
-function Calendar({getMoment,setMoment}){
+const Calendar = ({getMoment,setMoment}) => {
     const today = getMoment;
     const firstWeek = today.clone().startOf('month').week();
     const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
