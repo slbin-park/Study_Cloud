@@ -7,7 +7,7 @@ import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import StudyPageStyle from './studypageStyle';
 import {InputText} from '../../molecules';
-import {Button} from '../../atoms/button';
+import {Button} from '../../atoms';
 
 const StudyPageComponent: React.FC<any> = (props) => {
 return (
@@ -25,6 +25,9 @@ return (
         </div>
         <div className='memo'> 
         <InputText type='메모'/>
+        </div>
+        <div className='commit'>
+        <Button> 등록 </Button>
         </div>
 
 

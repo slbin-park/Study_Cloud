@@ -20,6 +20,10 @@ return css`
     .memo{
         width:80%;
     }
+    .commit{
+        margin-top:5%;
+        width:40%;
+    }
 `}}
 ;
 `;
