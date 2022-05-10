@@ -11,7 +11,7 @@ import InputStyle from './inputStyle';
 const InputComponent: React.FC<any> = (props) => {
 return (
     <>
-        <InputStyle/>
+        <InputStyle placeholder={props.placeholder}/>
     </>
 );
 };

@@ -1,3 +1,4 @@
+const TsconfigPathsPlugin  = require('tsconfig-paths-webpack-plugin')
 // @ts-ignore
 module.exports = {
   stories: [
@@ -9,5 +10,9 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
   ],
+  webpackFinal: async (config) => {
+    config.resolve.plugins.push(new TsconfigPathsPlugin({}));
+    return config;
+  },
   framework: '@storybook/react',
 };

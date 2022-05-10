@@ -10,7 +10,7 @@
       "import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘",
       "import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC",
       "",
-      "import $Name Header from './$Name Style';",
+      "import $Name Style from './$Name Style';",
       "",
       "const $Name Component: React.FC<any> = (props) => {",
       "return (",

@@ -6,11 +6,13 @@ import {faSearch,faBars} from '@fortawesome/free-solid-svg-icons'; // fill 타�
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
+// import useStore from '../../../../zustand/test/index';
+
 import NavBarStyle from './navbarStyle';
 import Molecules, { IconText } from '../../molecules/index';
 const NavBarComponent: React.FC<any> = (props) => {
-return (
-    <>
+    return (
+        <>
         <NavBarStyle onClick={()=>props.set_hamburger(false)}>
             <div className='menu' >
             <IconText icon='user' href='/'/>
