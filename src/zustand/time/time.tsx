@@ -1,7 +1,10 @@
-import create from "zustand";
-const useStore = create((set) => ({
-    isDark: false,
-    toggleIsDark: () => set((state) => ({ isDark: !state.isDark })),
-}));
+import createStore from 'zustand'
+import timeType from './time'
+import moment from 'moment';
 
+const useStore = createStore<timeType>(set => ({
+  time : moment(),
+  increase_day : () => set(state => ({ time : state.time.add(1, 'days')})),
+  decrease_day : () => set(state => ({ time : state.time.subtract(1, 'days')})),
+}))
 export default useStore;
