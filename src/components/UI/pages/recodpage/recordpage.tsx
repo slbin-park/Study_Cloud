@@ -25,7 +25,7 @@ return (
         <Card/>
         </div>
     </div>
-    <Link href='/zustand'>
+    <Link href='/study'>
     <div className = 'Icon'>
     <Icon/>
     </div>

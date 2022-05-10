@@ -1,5 +1,5 @@
 import createStore from 'zustand'
-import timeType from './time'
+import timeType from './timeType'
 import moment from 'moment';
 
 const useStore = createStore<timeType>(set => ({

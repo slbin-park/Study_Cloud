@@ -7,27 +7,27 @@ import {} from '@fortawesome/free-brands-svg-icons'; // 브랜드 아이콘
 import {faArrowLeft,faArrowRight} from '@fortawesome/free-solid-svg-icons'; // fill 타입 아이콘
 import {faUserCircle } from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
+
 import {Button} from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
-import {Card,Timer} from '../../molecules/index'
+import {Card,Timer} from '../../molecules/index';
+import  useStore from 'zus/time/time';
 
 const MainPageComponent: React.FC<any> = (props) => {
-    
+    const time = useStore();
     const [timer,set_timer] = useState(false)
-
-    const [getMoment, setMoment] = useState(moment());
-return (
-    <>
+    return (
+        <>
         <MainPageStyle>
             <div className = 'head_box'>
                 <FontAwesomeIcon icon={faUserCircle}  style={{height:'70px',color:'#ffad85'}}/>
             <div className = 'date' >
             
-            <FontAwesomeIcon icon={faArrowLeft} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().subtract(1, 'days')) }}/>
+            <FontAwesomeIcon icon={faArrowLeft} style={{height:'25px'}} onClick={time.decrease_day}/>
             
-            {getMoment.format('YYYY 년 MM 월 DD 일')}
+            {time.time.format('YYYY 년 MM 월 DD 일')}
             
-            <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}} onClick={() => { setMoment(getMoment.clone().add(1, 'days')) }}/>
+            <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}} onClick={time.increase_day}/>
             
             </div>
             <div className = 'time'>
