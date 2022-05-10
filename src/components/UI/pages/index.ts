@@ -2,11 +2,13 @@ import Mainpage  from './mainpage'
 import RecordPage from './recodpage'
 import StduyPage from './studypage'
 import LoginPage from './loginpage'
+import RegisterPage from './registerpage'
 const Pages = {
     Mainpage,
     RecordPage,
     StduyPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
 };
 
 export default Pages;
@@ -16,4 +18,5 @@ export {
     RecordPage,
     StduyPage,
     LoginPage,
+    RegisterPage,
 };

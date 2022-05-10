@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import RecordComponent from '../../src/components/pages/recordPage'
+import RegisterComponent from 'page/registerpage'
 
 const LoginPage: NextPage<any> = ({}) => {
   return (
@@ -10,7 +10,7 @@ const LoginPage: NextPage<any> = ({}) => {
       <Head>
         <title></title>
       </Head>
-      <RecordComponent />
+      <RegisterComponent />
     </>
   );
 };
