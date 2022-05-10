@@ -8,33 +8,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import RegisterPageStyle from './registerpageStyle';
 
-import {Input} from '../../atoms'
+import {Input,Button} from '../../atoms'
 
 const RegisterPageComponent: React.FC<any> = (props) => {
-return (
+    
+    return (
     <>
-        <RegisterPageStyle>
+        <RegisterPageStyle onSubmit={(e)=>props.onSubmit(e)}>
             회원가입
+            
             <div className='input_box'>
-            <Input placeholder='아이디'></Input>
+            <Input type = 'id' placeholder='아이디'></Input>
             </div>
 
             <div className='input_box'>
-            <Input placeholder='비밀번호'></Input>
+            <Input type = 'password' placeholder='비밀번호'></Input>
             </div>
             
             <div className='input_box'>
-            <Input placeholder='비민번호 확인'></Input>
+            <Input type = 'password_check' placeholder='비민번호 확인'></Input>
             </div>
 
             <div className='input_box'>
-            <Input placeholder='학교'></Input>
+            <Input type = 'school' placeholder='학교'></Input>
             </div>
             
             <div className='input_box'>
-            <Input placeholder='전공'></Input>
+            <Input type = 'major' placeholder='전공'></Input>
             </div>
 
+            <div className='button_box'>
+                <Button>
+                    회원 가입
+                </Button>
+            </div>
         </RegisterPageStyle>
     </>
 );

@@ -15,7 +15,7 @@ import  useStore from 'zus/time/time';
 
 const MainPageComponent: React.FC<any> = (props) => {
     const time = useStore();
-    const [timer,set_timer] = useState(false)
+    const [timer,set_timer] = useState<boolean>(false);
     return (
         <>
         <MainPageStyle>

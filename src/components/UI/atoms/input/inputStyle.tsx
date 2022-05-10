@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { InputType } from './inputType';
 
-const InputStyle = styled.input.attrs((props) => ({}))<InputType>`
+const InputStyle = styled.input.attrs((props) => ({name : props.type}))<InputType>`
 ${(props) => {
     const middle = props.theme.palette.color_middle;
 return css`
