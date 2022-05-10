@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import useStore from 'zus/test/index'
 import {Input,Button} from '../../atoms' 
+import Link from 'next/link'
 
 import LoginPageStyle from './loginpageStyle';
 
@@ -28,6 +29,13 @@ return (
                     login
                 </Button>
             </div>
+            <Link href='/register'>
+            <div className='login'>
+                <Button >
+                    register
+                </Button>
+            </div>
+            </Link>
         </LoginPageStyle>
     </>
 );

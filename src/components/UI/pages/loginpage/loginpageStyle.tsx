@@ -24,6 +24,7 @@ return css`
     }
     .login{
         margin-top : 30px;
+        margin-bottom : 0px;
         width:30%;
     }
 `}}
