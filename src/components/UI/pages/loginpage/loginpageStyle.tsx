@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { LoginPageType } from './loginpageType';
 
-const LoginPageStyle = styled.div.attrs((props) => ({}))<LoginPageType>`
+const LoginPageStyle = styled.form.attrs((props) => ({}))<LoginPageType>`
 ${(props) => {
     const middle = props.theme.palette.$color_middle;
 return css`
