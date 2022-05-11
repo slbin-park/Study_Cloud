@@ -91,26 +91,26 @@ index는 각 폴더 명이 주소가 된다.
 Storybook을 이용하여 UI를 만드는 폴더
 
 
-    ├─pages <br>
-    │ ├─ api <br>
-    │ └─ index.js<br>
-    ├─public <br>
-    │<br>
-    ├─src <br>
-    │ ├─ components<br>
-    │ │ ├─ UI<br>
-    │ ├─ └─ atoms<br>
-    │ ├───└─index.js<br>
-    │ ├─── molecules<br>
-    │ ├───└─index.js<br>
-    │ ├─── organisms<br>
-    │ ├───└─index.js<br>
-    │ ├─── template<br>
-    │ └───└─index.js<br>
-    │ └─ index.js<br>
-    │<br>
-    ├─style<br>
-    └─ global.css<br>
+    ├─pages 
+    │ ├─ api 
+    │ └─ index.js
+    ├─public 
+    │
+    ├─src
+    │ ├─ components
+    │ │ ├─ UI
+    │ ├─ └─ atoms
+    │ ├───└─index.js
+    │ ├─── molecules
+    │ ├───└─index.js
+    │ ├─── organisms
+    │ ├───└─index.js
+    │ ├─── template
+    │ └───└─index.js
+    │ └─ index.js
+    │
+    ├─style
+    └─ global.css
 
 1. 회원 정보 
     회원 정보 db

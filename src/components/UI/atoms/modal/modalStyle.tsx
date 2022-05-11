@@ -13,15 +13,17 @@ return css`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.65);
     display: flex;
     justify-content: center;
     align-items: center;
     height : ${props.modal ? '100vh' : '0vh'};
     visibility: ${props.modal ? 'visible' : 'hidden'};
-    z-index : 10;
-
+    background-color: #ffffff;
+    /* background-color: rgba( 255, 255, 255, 0.5 ); */
+    background-color: rgba(0, 0, 0, 0.1);
     .modal_div{
+
+        /* filter: blur(0px); */
         z-index: 9999;
         border-radius : 5px;
         background-color: white;

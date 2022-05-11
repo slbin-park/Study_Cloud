@@ -19,7 +19,7 @@ return (
             </div>
         </ModalStyle>
     </>
-);
+    );
 };
 
 export default ModalComponent;
