@@ -14,8 +14,6 @@ return css`
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.65);
-    /* filter: blur(5px);
-    -webkit-filter: blur(5px); */
     display: flex;
     justify-content: center;
     align-items: center;
