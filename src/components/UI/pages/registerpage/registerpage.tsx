@@ -30,12 +30,18 @@ const RegisterPageComponent: React.FC<any> = (props) => {
             </div>
 
             <div className='input_box'>
+            <Input type = 'name' placeholder='이름'></Input>
+            </div>
+            
+            <div className='input_box'>
             <Input type = 'school' placeholder='학교'></Input>
             </div>
             
             <div className='input_box'>
             <Input type = 'major' placeholder='전공'></Input>
             </div>
+
+
 
             <div className='button_box'>
                 <Button>
