@@ -25,11 +25,11 @@ const HeaderComponent: React.FC<any> = (props) => {
         </div>
         </Link>
         <div className='Icon_div'>
-          <Input />
+          <Input placeholder='검색창' type='search'/>
         <FontAwesomeIcon icon={faSearch} style={{cursor : 'pointer',height:'40%',marginLeft:'10px',marginRight:'10px',color:'white'}}/>
         <FontAwesomeIcon onClick={()=>set_hamburger(!hamburger)} icon={faBars} style={{cursor : 'pointer',height:'40%',color:'white'}}/>
         </div>
-        {hamburger ? <NavBar {...props} set_hamburger={set_hamburger}/> : ''}
+        <NavBar {...props} hamburger={hamburger} set_hamburger={set_hamburger}/>
 
     </StyledHeader>
     {/* <NavBar/> */}

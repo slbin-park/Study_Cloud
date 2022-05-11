@@ -18,4 +18,5 @@ const Template: Story<any> = (args) => (
 export const Default = Template.bind({});
 Default.parameters = {};
 Default.args = {
+    modal : true,
 };

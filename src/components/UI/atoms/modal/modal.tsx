@@ -11,7 +11,7 @@ import ModalStyle from './modalStyle';
 const ModalComponent: React.FC<any> = (props) => {
 return (
     <>
-        <ModalStyle>
+        <ModalStyle {...props}>
             <div className='modal_div'>
                 <div className='modal_title'>
                     제목입니다.
