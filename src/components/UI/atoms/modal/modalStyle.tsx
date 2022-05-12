@@ -28,16 +28,23 @@ return css`
         border-radius : 5px;
         background-color: white;
         padding : 5%;
-        height: 20%;
+        height: 30%;
         width: 30%;
         display: flex;
         justify-content: center;
         text-align: center;
+        flex-direction: column;
+        align-items: center;
         .modal_title{
             color : ${middle};
-            font-size: 4vh;
+            font-size: 2vh;
             height: 10%;
             width: 100%;
+            margin-bottom:40px;
+        }
+        .modal_button{
+            width:50%;
+            height:20%;
         }
     }
 `}}
