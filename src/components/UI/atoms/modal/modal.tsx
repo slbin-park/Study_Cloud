@@ -11,6 +11,9 @@ import useStore from 'zus/modal/modal'
 
 const ModalComponent: React.FC<any> = (props) => {
     const modal = useStore();
+    const modal_click = async ()=>{
+        modal.set_modal()
+    }
 return (
     <>
         <ModalStyle {...props}>
@@ -19,7 +22,7 @@ return (
                     {modal.modal_text}
                 </div>
                 <div className='modal_button'>
-                <Button onClick={modal.set_modal}>
+                <Button onClick={modal_click}>
                     확인
                 </Button>
                 </div>
