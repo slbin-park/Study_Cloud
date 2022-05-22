@@ -3,8 +3,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import RegisterPageComponent from './registerpage';
 import {RegisterPageType} from './registerpageType'
 import useStore from 'zus/modal/modal';
+
 const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
     const modal = useStore();
+
     const setRegister = (e) =>{
         e.preventDefault();
         e.persist();
@@ -20,7 +22,7 @@ const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
           };
         
         
-        axios.post("http://localhost:3001/api/register",{
+        axios.post("http://localhost:3001/api/user/register",{
             id : data.id,
             password : data.password,
             name : data.name,
@@ -31,8 +33,7 @@ const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
                 Authorization : 'token',
             },
         }).then((res)=>{
-            modal.set_modal_text('회원가입에 성공하셨습니다.')
-            console.log(res)
+            modal.set_modal_text(res.data.success ? '회원가입에 성공하셨습니다.' : '회원가입에 실패하셨습니다.')
         }).catch((err)=>{
             modal.set_modal_text('회원가입에 실패하셨습니다.')
             console.log(err)

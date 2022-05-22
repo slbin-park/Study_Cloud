@@ -16,16 +16,16 @@ const LoginPageComponent: React.FC<any> = (props) => {
     const login = useStore();
 return (
     <>
-        <LoginPageStyle>
+        <LoginPageStyle onSubmit={(e)=>props.onSubmit(e)}>
             <FontAwesomeIcon icon={faUser} className='icon'/>
             <div className='input_line'>
-                <Input placeholder='ID'/>
+                <Input type='id' placeholder='ID'/>
             </div>
             <div className='input_line'>
-                <Input placeholder='Password'/>
+                <Input type='password' placeholder='Password'/>
             </div>
             <div className='login'>
-                <Button onClick={login.success_login}>
+                <Button >
                     login
                 </Button>
             </div>
