@@ -25,7 +25,7 @@ return (
             <div className='calendar_body'>
                 <div className='calendar_body_box'>
                     <Day_kor />
-                    <Calendar getMoment={getMoment} setMoment={setMoment}/>
+                    <Calendar time={props.time} getMoment={getMoment} setMoment={setMoment}/>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ return (
 );
 };
 
-const Calendar = ({getMoment,setMoment}) => {
+const Calendar = ({time,getMoment,setMoment}) => {
     const today = getMoment;
     const firstWeek = today.clone().startOf('month').week();
     const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
@@ -48,21 +48,21 @@ const Calendar = ({getMoment,setMoment}) => {
                     Array(7).fill(0).map((data, index) => {
                         let days = today.clone().startOf('year').week(week).startOf('week').add(index, 'day'); //d로해도되지만 직관성
 
-                        if (moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
+                        if (time.time.format('YYYYMMDD') === days.format('YYYYMMDD')) {
                             return (
-                                <div className='calendar_body_days'  key={index} >
+                                <div className='calendar_body_days_focus'  onClick={() => time.set_time(days)}  key={index} >
                                     <span style={{ color: 'red' }}>{days.format('D')}</span>
                                 </div>
                             );
                         } else if (days.format('MM') !== today.format('MM')) {
                             return (
-                                <div className='calendar_body_days' onClick={() => console.log(days.format('YYYYMMDD'))} key={index} >
+                                <div className='calendar_body_days' onClick={() => time.set_time(days)} key={index} >
                                     <span style={{ color: 'gray' }}>{days.format('D')}</span>
                                 </div>
                             );
                         } else {
                             return (
-                                <div className='calendar_body_days' key={index} >
+                                <div className='calendar_body_days' onClick={() => time.set_time(days)} key={index} >
                                     <span>{days.format('D')}</span>
                                 </div>
                             );

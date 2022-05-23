@@ -72,7 +72,21 @@ return css`
             width: 100%;
             height: 100%;
             margin-bottom: 10px;
+            .calendar_body_days_focus{
+                cursor: pointer;
+                display:flex;
+                flex-direction: column;
+                border:2px solid ${middle};
+                border-radius: 5px;
+                margin: 5px;
+                width: 100%;
+                height:100%;
+                text-align: initial;
+                font-size : 2vw;
+                padding: 1px;
+            }
             .calendar_body_days{
+                cursor: pointer;
                 display:flex;
                 flex-direction: column;
                 border:2px solid ${gray};

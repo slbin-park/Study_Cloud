@@ -9,31 +9,33 @@ import moment from 'moment';
 import InputTextStyle from './inputtextStyle';
 import Atoms , {Select} from '../../atoms';
 import {time,minute} from'./timeParm';
+
+
 const InputTextComponent: React.FC<any> = (props) => {
-    const [getMoment, setMoment] = useState(moment());
-return (
+
+    return (
     <>
         <InputTextStyle {...props}>
         {props.type == '제목'? <>
         <div className='text'>제목</div>
         
-         <input type='text'/></>:''}
+         <input name='title' type='text'/></>:''}
 
         {props.type == '시작'? 
         <>
         <div className='text'>시작</div>
-        <div>{getMoment.format('YYYY.MM.DD')}</div>
+        <div>{props.time.time.format('YYYY.MM.DD')}</div>
         
         <div className='select'>
-        <Select placeholder='오전' item={['오전','오후']}></Select>
+        <Select name='start' placeholder='없음' item={['오전','오후']}></Select>
         </div>
 
         <div className='select'>
-        <Select placeholder='0' item={time}></Select>
+        <Select name='start_t' placeholder='0' item={time}></Select>
         </div>
         시
         <div className='select'>
-        <Select placeholder='0' item={minute}></Select>
+        <Select name='start_m' placeholder='0' item={minute}></Select>
         </div>
         분
         </>:''}
@@ -41,18 +43,18 @@ return (
         {props.type == '종료'? 
         <>
                 <div className='text'>종료</div>
-        <div>{getMoment.format('YYYY.MM.DD')}</div>
+        <div>{props.time.time.format('YYYY.MM.DD')}</div>
 
         <div className='select'>
-        <Select placeholder='오전' item={['오전','오후']}></Select>
+        <Select name='end' placeholder='없음' item={['오전','오후']}></Select>
         </div>
         <div className='select'>
             
-        <Select placeholder='0' item={time}></Select>
+        <Select name='end_t' placeholder='0' item={time}></Select>
         </div>
         시
         <div className='select'>
-        <Select placeholder='0' item={minute}></Select>
+        <Select name='end_m' placeholder='0' item={minute}></Select>
         </div>
         분
         </>:''}
@@ -62,7 +64,7 @@ return (
         <div className='memo'>
             메모 
             <div className='input_memo'>
-            <textarea className='memo_textarea'/>
+            <textarea name='content' className='memo_textarea'/>
             </div>
         </div>
         </>:''}

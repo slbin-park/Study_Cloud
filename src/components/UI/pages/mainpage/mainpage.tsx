@@ -12,14 +12,27 @@ import {Button} from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
 import {Card,Timer} from '../../molecules/index';
 import  useStore from 'zus/time/time';
+import useStore_user from 'zus/user/user'
+import useStore_login from 'zus/test/index'
+
+
 
 const MainPageComponent: React.FC<any> = (props) => {
     const time = useStore();
+    const user = useStore_user();
+    const login = useStore_login();
     const [timer,set_timer] = useState<boolean>(false);
     return (
         <>
         <MainPageStyle>
             <div className = 'head_box'>
+                {login.login? 
+                <div>
+                    {user.name} , {user.major} , {user.school}
+                </div>
+                :
+                ''
+                }
                 <FontAwesomeIcon icon={faUserCircle}  style={{height:'70px',color:'#ffad85'}}/>
             <div className = 'date' >
             

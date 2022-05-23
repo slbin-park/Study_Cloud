@@ -12,7 +12,7 @@ import {Button} from '../../atoms';
 const StudyPageComponent: React.FC<any> = (props) => {
 return (
 <>
-    <StudyPageStyle>
+    <StudyPageStyle onSubmit={(e)=>props.onSubmit(e)}>
         <div className='line_text'> 
         <InputText type='제목'/>
         </div>

@@ -35,7 +35,6 @@ const Button: React.FC<LoginPageType> = (props, {}: LoginPageType) =>{
                 user.set_user(res.data)
                 login.success_login();
                 modal.set_modal_text('로그인에 성공하셨습니다.')
-
                 // localStorage.getItem('key');
             }
             else{
