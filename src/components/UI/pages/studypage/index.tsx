@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import StudyPageComponent from './studypage';
-import {StudyPageType} from './studypageType'
-import useStore from 'zus/time/time'
+import {StudyPageType} from './studypageType';
+import useStore_time from 'zus/time/time';
+import useStore_user from 'zus/user/user';
 import moment from 'moment';
+import axios from 'axios';
 
 const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) => 
 {
-    const time = useStore();
+    const time = useStore_time();
+    const user = useStore_user();
     const onSubmit = async (e) =>{
         e.preventDefault();
         e.persist();
@@ -54,7 +57,23 @@ const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) =>
           start_time.add(data.start_m,'m')
           end_time.add(data.end_m,'m')
           
-    
+        axios.post("http://localhost:3001/api/record/save",{
+            id : user.id,
+            date : time.time.format('YYYYMMDD'),
+            start_time : start_time.format('HH:mm:ss'),
+            end_time : end_time.format('HH:mm:SS'),
+            title : data.title,
+            content : data.content,
+        },{
+            headers : {
+                Authorization : user.access_token,
+            },
+        }).then((res)=>{
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err)
+        })
+
     }
     return(
     <StudyPageComponent {...props} onSubmit={onSubmit}/>

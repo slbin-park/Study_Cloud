@@ -2,10 +2,35 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import useStore from 'zus/test/index';
+import useStore_user from 'zus/user/user'
+import axios from 'axios';
+import moment from 'moment';
 
 const LoginPage: NextPage<any> = ({}) => {
-    const bears = useStore()
+    const bears = useStore();
+    const user = useStore_user();
 
+    const get_record = (e) =>{
+      e.preventDefault();
+      e.persist();
+      axios.post("http://localhost:3001/api/record/get",{
+            id : user.id,
+        },{
+            headers : {
+                Authorization : user.access_token,
+            },
+        }).then((res)=>{
+            let a = moment(res.data.response[0].end_time,'HH:mm:ss')
+            let b = moment(res.data.response[0].start_time,'HH:mm:ss')
+            console.log(a)
+            console.log(b)
+            console.log(moment.duration(a.diff(b)).asMinutes())
+
+            // moment.duration(t2.diff(t1)).asHours());
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
     return (
     <>
       <Head>
@@ -22,7 +47,7 @@ const LoginPage: NextPage<any> = ({}) => {
       </div>
       안녕하세요
       {bears.bears}
-      <button onClick={bears.increasePopulation}> 증가 </button>
+      <button onClick={get_record}> 증가 </button>
     </>
   );
 };
