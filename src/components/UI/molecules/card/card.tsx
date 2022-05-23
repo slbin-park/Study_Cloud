@@ -12,12 +12,12 @@ import CardStyle from './cardStyle';
 const CardComponent: React.FC<any> = (props) => {
 return (
         <>
-            <CardStyle>
+            <CardStyle {...props}>
                 <div className='title'>
-                    제목입니다.
+                    {props.title || '제목입니다.'}
                 </div>
                 <div className='comment'>  
-                    내용입니다.
+                    {props.content || '내용입니다.'}
 
                 </div>
             </CardStyle>

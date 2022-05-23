@@ -2,13 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import useStore from 'zus/test/index';
-import useStore_user from 'zus/user/user'
+import useStore_user from 'zus/user/user';
+import useStore_record from 'zus/record/record';
 import axios from 'axios';
 import moment from 'moment';
 
 const LoginPage: NextPage<any> = ({}) => {
     const bears = useStore();
     const user = useStore_user();
+    const record = useStore_record();
 
     const get_record = (e) =>{
       e.preventDefault();
@@ -31,6 +33,14 @@ const LoginPage: NextPage<any> = ({}) => {
             console.log(err)
         })
     }
+
+    const set_zus = (e)=>{
+      e.preventDefault();
+      e.persist();
+      record.getRecord(user);
+      console.log(record)
+    }
+    
     return (
     <>
       <Head>
@@ -47,7 +57,7 @@ const LoginPage: NextPage<any> = ({}) => {
       </div>
       안녕하세요
       {bears.bears}
-      <button onClick={get_record}> 증가 </button>
+      <button onClick={set_zus}> 증가 </button>
     </>
   );
 };

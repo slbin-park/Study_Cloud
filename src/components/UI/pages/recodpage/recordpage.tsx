@@ -21,8 +21,16 @@ return (
             오늘 한 일
         </div>
         <div className='til_card'>
-        <Card/>
-        <Card/>
+            {
+                props.record.data.map((data)=>{
+                    console.log(data)
+                    return(
+                    <div key={data.post_num}>
+                    <Card title={data.title} content={data.memo}/>
+                    </div>
+                    )
+                })
+            }
         </div>
     </div>
     <Link href='/study'>
