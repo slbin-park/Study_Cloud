@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import RecordPageStyle from './recordpageStyle';
 import {Icon} from '../../atoms/index';
 import Link from 'next/link'
+import moment from 'moment';
 
 import {Calendar , Card} from '../../molecules/index';
 const RecordPageComponent: React.FC<any> = (props) => {
@@ -23,12 +24,16 @@ return (
         <div className='til_card'>
             {
                 props.record.data.map((data)=>{
-                    console.log(data)
-                    return(
-                    <div key={data.post_num}>
-                    <Card title={data.title} content={data.memo}/>
-                    </div>
-                    )
+                    const cur_day = moment(data.date).format('YYYYMMDD')
+                    const compare_day = props.time.time.format('YYYYMMDD')
+                    if(cur_day === compare_day){
+                        return(
+                            <div key={data.post_num}>
+                                <Card data = {data}/>
+                            </div>
+                            )
+                    }
+                    return '';
                 })
             }
         </div>

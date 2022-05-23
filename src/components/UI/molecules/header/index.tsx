@@ -5,12 +5,15 @@ import {HeaderType} from './headerType'
 import axios from 'axios';
 import useStore from 'zus/user/user';
 import useStore_login from 'zus/test/index'
+import useStore_record from 'zus/record/record';
 
 const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
   
   const [hamburger,set_hamburger] = useState<boolean>(false);
   const user = useStore();
   const login = useStore_login();
+  const record = useStore_record();
+
   useEffect(()=>{
     const token = localStorage.getItem('token');
     if (token){
@@ -28,6 +31,12 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
         })
       }
     },[]);
+
+    useEffect(()=>{
+      record.getRecord(user);
+      console.log(record)
+    },[user.id])
+
   return(
     <>
       <HeaderComponent hamburger={hamburger} set_hamburger = {set_hamburger} {...props} />

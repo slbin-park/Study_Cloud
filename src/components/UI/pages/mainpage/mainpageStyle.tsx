@@ -31,6 +31,12 @@ return css`
         display: flex;
         align-items: center;
     }
+    
+    .name{
+        color:white;
+        font-weight: bold;
+        font-size:30px;
+    }
 
     .time{
         padding : 10px;

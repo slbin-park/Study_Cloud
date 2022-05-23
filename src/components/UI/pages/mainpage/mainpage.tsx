@@ -14,25 +14,20 @@ import {Card,Timer} from '../../molecules/index';
 import  useStore from 'zus/time/time';
 import useStore_user from 'zus/user/user'
 import useStore_login from 'zus/test/index'
-
+import useStore_record from 'zus/record/record'
 
 
 const MainPageComponent: React.FC<any> = (props) => {
     const time = useStore();
     const user = useStore_user();
     const login = useStore_login();
+    const record = useStore_record();
     const [timer,set_timer] = useState<boolean>(false);
     return (
         <>
         <MainPageStyle>
             <div className = 'head_box'>
-                {login.login? 
-                <div>
-                    {user.name} , {user.major} , {user.school}
-                </div>
-                :
-                ''
-                }
+               
                 <FontAwesomeIcon icon={faUserCircle}  style={{height:'70px',color:'#ffad85'}}/>
             <div className = 'date' >
             
@@ -43,6 +38,16 @@ const MainPageComponent: React.FC<any> = (props) => {
             <FontAwesomeIcon icon={faArrowRight} style={{height:'25px'}} onClick={time.increase_day}/>
             
             </div>
+            {login.login? 
+                <div className='name'>
+                    {user.name}님 환영합니다
+                </div>
+                :
+                <div className='name'>
+                    로그인을 해주세요
+                </div>
+                
+                }
             <div className = 'time'>
                 <Timer timer = {timer}/>
             </div>
@@ -58,8 +63,15 @@ const MainPageComponent: React.FC<any> = (props) => {
                     오늘 한 일
                 </div>
                 <div className='til_card'>
-                <Card/>
-                <Card/>
+                {
+                record.data.map((data)=>{
+                    return(
+                    <div key={data.post_num}>
+                    <Card data = {data}/>
+                    </div>
+                    )
+                })
+            }
                 </div>
             </div>
         </MainPageStyle>

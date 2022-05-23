@@ -20,7 +20,9 @@ const NavBarComponent: React.FC<any> = (props) => {
             <IconText icon='community'/>
             <IconText icon='study' href='/record'/>
             <IconText icon='info'/>
+            <div onClick={props.logout}>
             <IconText icon='logout'/>
+            </div>
             </div>
         </NavBarStyle>
     </>

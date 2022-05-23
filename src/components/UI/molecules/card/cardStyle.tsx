@@ -14,9 +14,12 @@ return css`
     color : white;
     .title{
         padding-left : 30px;
+        padding-right : 30px;
         font-size: 25px;
         padding-top : 20px;
         border-bottom: white 3px solid;
+        display:flex;
+        justify-content: space-between;
 
     }
     .comment{

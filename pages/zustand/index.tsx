@@ -38,9 +38,8 @@ const LoginPage: NextPage<any> = ({}) => {
       e.preventDefault();
       e.persist();
       record.getRecord(user);
-      console.log(record)
     }
-    
+
     return (
     <>
       <Head>

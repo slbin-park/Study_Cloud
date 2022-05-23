@@ -14,11 +14,17 @@ return (
         <>
             <CardStyle {...props}>
                 <div className='title'>
-                    {props.title || '제목입니다.'}
+                    <div>
+                    {props.data.title || '제목입니다.'}
+                    </div>
+                    <div>
+                    {
+                        props.cal(props.data.start_time,props.data.end_time)
+                    }분
+                    </div>
                 </div>
                 <div className='comment'>  
-                    {props.content || '내용입니다.'}
-
+                    {props.data.memo || '내용입니다.'}
                 </div>
             </CardStyle>
         </>

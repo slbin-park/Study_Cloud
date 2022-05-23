@@ -1,4 +1,3 @@
 export interface CardType {
-    title : string;
-    content : string
+    data : any;
 }
