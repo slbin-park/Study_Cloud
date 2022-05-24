@@ -11,21 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import {Button} from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
 import {Card,Timer} from '../../molecules/index';
-import  useStore from 'zus/time/time';
-import useStore_user from 'zus/user/user'
-import useStore_login from 'zus/test/index'
-import useStore_record from 'zus/record/record'
 
 
-const MainPageComponent: React.FC<any> = (props) => {
-    const time = useStore();
-    const user = useStore_user();
-    const login = useStore_login();
-    const record = useStore_record();
-    const [timer,set_timer] = useState<boolean>(false);
+
+const MainPageComponent: React.FC<any> = ({time,user,login,record,timer,set_timer},props) => {
+
     return (
         <>
-        <MainPageStyle>
+        <MainPageStyle {...props}>
             <div className = 'head_box'>
                
                 <FontAwesomeIcon icon={faUserCircle}  style={{height:'70px',color:'#ffad85'}}/>
@@ -65,11 +58,19 @@ const MainPageComponent: React.FC<any> = (props) => {
                 <div className='til_card'>
                 {
                 record.data.map((data)=>{
+                    const cur_day = moment(data.date).format('YYYYMMDD')
+                    const compare_day = time.time.format('YYYYMMDD')
+                    if(cur_day === compare_day){
                     return(
+                        
                     <div key={data.post_num}>
                     <Card data = {data}/>
                     </div>
                     )
+                    }
+                    else{
+                        return ''
+                    }
                 })
             }
                 </div>

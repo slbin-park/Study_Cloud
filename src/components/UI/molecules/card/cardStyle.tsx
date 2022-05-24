@@ -12,6 +12,8 @@ return css`
     border-radius:20px;
     margin-top:20px;
     color : white;
+    cursor:pointer;
+
     .title{
         padding-left : 30px;
         padding-right : 30px;
@@ -27,6 +29,10 @@ return css`
         justify-content: center;
         padding:30px;
         font-size:20px;
+    }
+    :active{
+      margin-left:5px;
+      margin-top:30px;
     }
 `}}
 ;
