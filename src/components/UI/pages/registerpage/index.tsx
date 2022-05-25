@@ -33,6 +33,9 @@ const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
                 Authorization : 'token',
             },
         }).then((res)=>{
+            if(res.data.success){
+                modal.set_modal_success()
+            }
             modal.set_modal_text(res.data.success ? '회원가입에 성공하셨습니다.' : '회원가입에 실패하셨습니다.')
         }).catch((err)=>{
             modal.set_modal_text('회원가입에 실패하셨습니다.')

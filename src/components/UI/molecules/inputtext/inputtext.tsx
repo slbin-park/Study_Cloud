@@ -9,17 +9,17 @@ import moment from 'moment';
 import InputTextStyle from './inputtextStyle';
 import Atoms , {Select} from '../../atoms';
 import {time,minute} from'./timeParm';
-
+import useStore from 'zus/record/edit';
 
 const InputTextComponent: React.FC<any> = (props) => {
-
+    const edit = useStore();
     return (
     <>
         <InputTextStyle {...props}>
         {props.type == '제목'? <>
         <div className='text'>제목</div>
         
-         <input name='title' type='text'/></>:''}
+         <input name='title' type='text' value = {edit.title} onChange={(e)=>edit.edit_title(e.target.value)}/></>:''}
 
         {props.type == '시작'? 
         <>
@@ -27,15 +27,15 @@ const InputTextComponent: React.FC<any> = (props) => {
         <div>{props.time.time.format('YYYY.MM.DD')}</div>
         
         <div className='select'>
-        <Select name='start' placeholder='없음' item={['오전','오후']}></Select>
+        <Select dvalue={edit.start_d} name='start' placeholder='없음' item={['오전','오후']}></Select>
         </div>
 
         <div className='select'>
-        <Select name='start_t' placeholder='0' item={time}></Select>
+        <Select dvalue={edit.start_t} name='start_t' placeholder='0' item={time}></Select>
         </div>
         시
         <div className='select'>
-        <Select name='start_m' placeholder='0' item={minute}></Select>
+        <Select dvalue={edit.start_m} name='start_m' placeholder='0' item={minute}></Select>
         </div>
         분
         </>:''}
@@ -46,15 +46,15 @@ const InputTextComponent: React.FC<any> = (props) => {
         <div>{props.time.time.format('YYYY.MM.DD')}</div>
 
         <div className='select'>
-        <Select name='end' placeholder='없음' item={['오전','오후']}></Select>
+        <Select dvalue={edit.end_d} name='end' placeholder='없음' item={['오전','오후']}></Select>
         </div>
         <div className='select'>
             
-        <Select name='end_t' placeholder='0' item={time}></Select>
+        <Select dvalue={edit.end_t} name='end_t' placeholder='없음' item={time}></Select>
         </div>
         시
         <div className='select'>
-        <Select name='end_m' placeholder='0' item={minute}></Select>
+        <Select dvalue={edit.end_m} name='end_m' placeholder='없음' item={minute}></Select>
         </div>
         분
         </>:''}
@@ -64,7 +64,7 @@ const InputTextComponent: React.FC<any> = (props) => {
         <div className='memo'>
             메모 
             <div className='input_memo'>
-            <textarea name='content' className='memo_textarea'/>
+            <textarea name='content' className='memo_textarea' value = {edit.memo} onChange={(e)=>edit.edit_memo(e.target.value)}/>
             </div>
         </div>
         </>:''}

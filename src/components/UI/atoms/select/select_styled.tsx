@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { SelectParamsType } from '.';
 
 const StyledSelect = styled.select.attrs((props) => ({
-  defaultValue: 'none',
+  defaultValue: props.dvalue || '',
   name: props.name || '',
   disabled: props.disabled,
   required: props.required || false,

@@ -11,6 +11,7 @@ export interface SelectParamsType {
   required?: boolean;
   isSuccess?: boolean;
   isWarning?: boolean;
+  dvalue?:string;
 }
 
 const Select: React.FC<SelectParamsType> = (

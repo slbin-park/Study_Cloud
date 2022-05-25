@@ -8,11 +8,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import Atoms , {Button} from '../'
 import ModalStyle from './modalStyle';
 import useStore from 'zus/modal/modal'
+import Link from 'next/link'
+
 
 const ModalComponent: React.FC<any> = (props) => {
     const modal = useStore();
     const modal_click = async ()=>{
-        modal.set_modal()
+        modal.set_modal();
+        if(modal.modal_success === true){
+            modal.set_modal_success();
+        }
     }
 return (
     <>
@@ -22,9 +27,18 @@ return (
                     {modal.modal_text}
                 </div>
                 <div className='modal_button'>
+                
+                {modal.modal_success ? 
+                    <Link href='/'>
+                        <Button onClick={modal_click}>
+                            확인
+                        </Button>
+                    </Link>
+                :
                 <Button onClick={modal_click}>
-                    확인
+                확인
                 </Button>
+                } 
                 </div>
             </div>
         </ModalStyle>

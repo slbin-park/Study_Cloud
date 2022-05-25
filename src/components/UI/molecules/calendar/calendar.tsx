@@ -72,7 +72,10 @@ const Calendar = ({time,getMoment,setMoment}) => {
             </div>
         );
     }
-    return Result;
+    return (
+    <>
+    {Result}
+    </>);
 }
 
 

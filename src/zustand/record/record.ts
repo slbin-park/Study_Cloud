@@ -21,6 +21,7 @@ const useStore = createStore<any>(set=>(
             console.log(err)
         })
     },
+
 }))
 
 export default useStore;

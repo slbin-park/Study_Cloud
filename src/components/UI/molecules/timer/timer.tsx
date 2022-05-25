@@ -30,7 +30,7 @@ const TimerComponent: React.FC<any> = (props) => {
 
 
     return (
-        <TimerStyle>
+        <TimerStyle {...props}>
             {formatTime(hh)}:{formatTime(mm)}:{formatTime(ss)}
         </TimerStyle>
   );
