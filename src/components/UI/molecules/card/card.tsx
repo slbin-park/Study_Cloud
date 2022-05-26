@@ -12,10 +12,7 @@ import CardStyle from './cardStyle';
 
 const CardComponent: React.FC<any> = (props) => {
 return (
-        <>
-            <CardStyle {...props} onClick={(e)=>props.card_click(e,props.data)}>
-            <Link href='/study'>
-                <>
+        <CardStyle {...props} onClick={(e)=>props.card_click(e,props.data)}>
                 <div className='title'>
                     <div>
                     {props.data.title || '제목입니다.'}
@@ -26,13 +23,11 @@ return (
                     }분
                     </div>
                 </div>
+                
                 <div className='comment'>  
                     {props.data.memo || '내용입니다.'}
                 </div>
-                </>
-            </Link>
-            </CardStyle>
-        </>
+        </CardStyle>
 );
 };
 

@@ -24,6 +24,7 @@ const Select: React.FC<SelectParamsType> = (
     required,
     isSuccess,
     isWarning,
+    dvalue,
   }: SelectParamsType,
 ) => {
   return (

@@ -3,9 +3,11 @@ import CardComponent from './card';
 import {CardType} from './cardType';
 import moment from 'moment';
 import useStore from 'zus/record/edit'
+import {useRouter} from 'next/router';
 
 const Card: React.FC<CardType> = (props, {}: CardType) => {
     const edit = useStore()
+    const router = useRouter();
     const cal = (a ,b) =>{
         a = moment(a,'HH:mm:ss')
         b = moment(b,'HH:mm:ss')
@@ -33,7 +35,7 @@ const Card: React.FC<CardType> = (props, {}: CardType) => {
         edit.edit_end_d(parseInt(moment(data.end_time,'HH:mm:ss').format('HH')) >11 ? '오후' : '오전')
         
         edit.edit_end_m(parseInt(moment(data.end_time,'HH:mm:ss').format('mm')))
-        console.log()
+        router.push('/study')
     }
     
 
