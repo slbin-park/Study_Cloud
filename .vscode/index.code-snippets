@@ -6,11 +6,11 @@
             "import $Name Component from './$Name';",
             "import {$Name Type} from './$NameType'",
             "",
-            "const Button: React.FC<$Name Type> = (props, {}: $Name Type) => (",
+            "const $Name: React.FC<$Name Type> = (props, {}: $Name Type) => (",
               "<$Name Component {...props} />",
             ");",
             "",
-            "export default Button;"
+            "export default $Name;"
 		],
 		"description": "Set Base indexfrom"
 	}

@@ -30,6 +30,7 @@ const Button: React.FC<LoginPageType> = (props, {}: LoginPageType) =>{
                 Authorization : 'token',
             },
         }).then((res)=>{
+            console.log(res.data)
             if(res.data.success){
                 modal.set_modal_success()
                 localStorage.setItem('token', res.data.refresh_token);
