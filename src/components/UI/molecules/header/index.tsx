@@ -34,7 +34,6 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
 
     useEffect(()=>{
       record.getRecord(user);
-      console.log(record)
     },[user.id])
 
   return(

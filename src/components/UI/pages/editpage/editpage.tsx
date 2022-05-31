@@ -32,7 +32,7 @@ return (
             <Button> 수정 </Button>
             </div>
             <div className='button_div'>
-            <Button> 삭제 </Button>
+            <Button onClick={(e)=>props.onclick2(e)}> 삭제 </Button>
             </div>
         </div>
 

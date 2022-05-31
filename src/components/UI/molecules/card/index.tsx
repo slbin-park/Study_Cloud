@@ -22,7 +22,7 @@ const Card: React.FC<CardType> = (props, {}: CardType) => {
             edit.edit_start_t(parseInt(moment(data.start_time,'HH:mm:ss').format('HH'))-12)
         }
         else{
-            edit.edit_start_t(parseInt(moment(data.start_time,'HH:mm:ss').format('HH'))-12)
+            edit.edit_start_t(parseInt(moment(data.start_time,'HH:mm:ss').format('HH')))
         }
         edit.edit_start_m(parseInt(moment(data.start_time,'HH:mm:ss').format('mm')))
 
@@ -30,7 +30,7 @@ const Card: React.FC<CardType> = (props, {}: CardType) => {
             edit.edit_end_t(parseInt(moment(data.end_time,'HH:mm:ss').format('HH'))-12)
         }
         else{
-            edit.edit_end_t(parseInt(moment(data.end_time,'HH:mm:ss').format('HH'))-12)
+            edit.edit_end_t(parseInt(moment(data.end_time,'HH:mm:ss').format('HH')))
         }
         edit.edit_end_d(parseInt(moment(data.end_time,'HH:mm:ss').format('HH')) >11 ? '오후' : '오전')
         

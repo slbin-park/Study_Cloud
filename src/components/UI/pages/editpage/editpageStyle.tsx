@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { EditPageType } from './editpageType';
 
-const EditPageStyle = styled.div.attrs((props) => ({}))<EditPageType>`
+const EditPageStyle = styled.form.attrs((props) => ({}))<EditPageType>`
 ${(props) => {
     const middle = props.theme.palette.$color_middle;
 return css`
