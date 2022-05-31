@@ -5,11 +5,14 @@ import useStore_time from 'zus/time/time';
 import useStore_user from 'zus/user/user';
 import moment from 'moment';
 import axios from 'axios';
+import useStore_modal from 'zus/modal/modal';
 
 const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) => 
 {
     const time = useStore_time();
     const user = useStore_user();
+    const modal = useStore_modal();
+
     const onSubmit = async (e) =>{
         e.preventDefault();
         e.persist();
@@ -69,9 +72,15 @@ const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) =>
                 Authorization : user.access_token,
             },
         }).then((res)=>{
-            console.log(res)
+
+            if(res.data.success){
+              modal.set_modal_text('등록되었습니다.');
+              modal.set_modal_success();
+            }
         }).catch((err)=>{
             console.log(err)
+        }).then(()=>{
+          modal.set_modal();
         })
 
     }
