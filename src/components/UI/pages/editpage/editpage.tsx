@@ -7,7 +7,7 @@ import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이�
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import EditPageStyle from './editpageStyle';
-import {InputText} from '../../molecules';
+import {EditInputText} from '../../molecules';
 import {Button} from '../../atoms';
 
 const EditPageComponent: React.FC<any> = (props) => {
@@ -15,20 +15,25 @@ return (
 <>
 <EditPageStyle onSubmit={(e)=>props.onSubmit(e)}>
         <div className='line_text'> 
-        <InputText type='제목'/>
+        <EditInputText type='제목'/>
         </div>
         <div className='line_text'> 
-        <InputText type='시작'/>
+        <EditInputText type='시작'/>
         
         </div>
         <div className='line_text'> 
-        <InputText type='종료'/>
+        <EditInputText type='종료'/>
         </div>
         <div className='memo'> 
-        <InputText type='메모'/>
+        <EditInputText type='메모'/>
         </div>
         <div className='commit'>
-        <Button> 등록 </Button>
+            <div className='button_div'>
+            <Button> 수정 </Button>
+            </div>
+            <div className='button_div'>
+            <Button> 삭제 </Button>
+            </div>
         </div>
 
 

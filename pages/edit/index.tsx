@@ -2,15 +2,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import LoginComponent from 'page/loginPage/index'
+import EditComponent from 'page/editPage'
 
 const LoginPage: NextPage<any> = ({}) => {
   return (
     <>
       <Head>
-        <title></title>
+        <title>수정페이지</title>
       </Head>
-      <LoginComponent />
+      <EditComponent />
     </>
   );
 };

@@ -15,14 +15,24 @@ return css`
     .line_text{
         width:80%;
         height:20%;
-        padding-bottom:5%;
+        margin-bottom:5%;
     }
     .memo{
         width:80%;
     }
     .commit{
-        margin-top:5%;
-        width:40%;
+        margin:5%;
+        padding-left : 20%;
+        padding-right : 20%;
+
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+    }
+    .button_div{
+        width:30%;
+        display:flex;
+        justify-content: space-between;
     }
 `}}
 ;

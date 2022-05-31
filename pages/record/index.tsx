@@ -8,7 +8,7 @@ const LoginPage: NextPage<any> = ({}) => {
   return (
     <>
       <Head>
-        <title></title>
+        <title>학습 기록</title>
       </Head>
       <RecordComponent />
     </>

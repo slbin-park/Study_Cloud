@@ -35,7 +35,7 @@ const Card: React.FC<CardType> = (props, {}: CardType) => {
         edit.edit_end_d(parseInt(moment(data.end_time,'HH:mm:ss').format('HH')) >11 ? '오후' : '오전')
         
         edit.edit_end_m(parseInt(moment(data.end_time,'HH:mm:ss').format('mm')))
-        router.push('/study')
+        router.push('/edit')
     }
     
 

@@ -1,6 +1,4 @@
 import createStore from 'zustand';
-import axios from 'axios';
-import useStore_user from 'zus/user/user';
 const useStore = createStore<any>(set=>(
     {
     date: '',
