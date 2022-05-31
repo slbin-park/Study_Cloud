@@ -6,6 +6,7 @@ import axios from 'axios';
 import useStore from 'zus/user/user';
 import useStore_login from 'zus/test/index'
 import useStore_record from 'zus/record/record';
+import { useRouter } from 'next/router'
 
 const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
   
@@ -13,7 +14,7 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
   const user = useStore();
   const login = useStore_login();
   const record = useStore_record();
-
+  const router = useRouter();
   useEffect(()=>{
     const token = localStorage.getItem('token');
     if (token){
@@ -34,7 +35,7 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
 
     useEffect(()=>{
       record.getRecord(user);
-    },[user.id])
+    },[user.id,router.pathname])
 
   return(
     <>

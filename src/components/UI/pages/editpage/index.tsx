@@ -2,15 +2,17 @@ import React, { useEffect, useState, useRef } from 'react';
 import EditPageComponent from './editpage';
 import {EditPageType} from './editpageType';
 import moment from 'moment';
-import axios from 'axios'
+import axios from 'axios';
 import useStore_time from 'zus/time/time';
-import useStore from 'zus/record/edit'
-import useStore_user from 'zus/user/user'
+import useStore from 'zus/record/edit';
+import useStore_user from 'zus/user/user';
+import useStore_modal from 'zus/modal/modal';
 
 const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
     const edit = useStore();
     const time = useStore_time();
     const user = useStore_user();
+    const modal = useStore_modal();
     let a = 0;
 
     const onclick2 = (e)=>{
@@ -19,13 +21,11 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
 
     const onSubmit = async (e) =>{
         const url = a == 0 ? 'update' : 'delete'
-        console.log(e.target)
         e.preventDefault();
         e.persist();
         const start_time = moment(time.time.format('YYYYMMDD'))
         const end_time = moment(time.time.format('YYYYMMDD'))
 
-        console.log(edit.post_num)
 
         const data = {
             title : e.target.title.value,
@@ -50,7 +50,6 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
           // 시간 더하기
           if(data.start == '오전'){
             start_time.add(data.start_t,'h')
-            console.log(start_time.format('YYYYMMDD HH:mm:ss'))
           }
           else{
               start_time.add(12+data.start_t,'h')
@@ -79,9 +78,15 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
                 Authorization : user.access_token,
             },
         }).then((res)=>{
-            console.log(res)
+          if(res.data.success){
+            const modal_text = a==0? '수정에 성공하셨습니다.' : '삭제에 성공하셨습니다.';
+            modal.set_modal_text(modal_text)
+            modal.set_modal_success()
+          }
         }).catch((err)=>{
             console.log(err)
+        }).then(()=>{
+          modal.set_modal();
         })
     }
     return(
