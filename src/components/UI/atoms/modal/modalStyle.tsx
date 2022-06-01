@@ -14,6 +14,7 @@ return css`
     bottom: 0;
     left: 0;
     display: flex;
+    z-index : 5;
     justify-content: center;
     align-items: center;
     height : ${props.modal ? '100vh' : '0vh'};

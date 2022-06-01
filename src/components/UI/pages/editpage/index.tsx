@@ -7,13 +7,27 @@ import useStore_time from 'zus/time/time';
 import useStore from 'zus/record/edit';
 import useStore_user from 'zus/user/user';
 import useStore_modal from 'zus/modal/modal';
+import useStore_test from 'zus/test/index';
+import { useRouter } from 'next/router';
 
 const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
     const edit = useStore();
     const time = useStore_time();
     const user = useStore_user();
     const modal = useStore_modal();
+    const login = useStore_test();
+    const router = useRouter();
     let a = 0;
+
+    useEffect(()=>{
+      if(!login.login){
+          router.push('/')
+          modal.set_modal_success()
+          modal.set_modal_text('로그인이 필요한 기능입니다..')
+          modal.set_modal();
+      }
+    },[])
+
 
     const onclick2 = (e)=>{
       a = 1

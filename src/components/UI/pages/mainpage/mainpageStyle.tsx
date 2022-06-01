@@ -51,6 +51,7 @@ return css`
         width : 200px;
         position: relative;
         top: 22Px;
+        z-index : 1;
     }
     .til{
         margin: 20px;

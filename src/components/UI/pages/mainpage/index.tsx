@@ -12,6 +12,7 @@ const MainPage: React.FC<MainPageType> = (props, {}: MainPageType) => {
     const login = useStore_login();
     const record = useStore_record();
     const [timer,set_timer] = useState<boolean>(false);
+
 return(
 <MainPageComponent {...props} time={time} user={user} login={login} record={record} timer={timer} set_timer={set_timer} />
 )};

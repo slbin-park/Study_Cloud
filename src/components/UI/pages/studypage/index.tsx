@@ -6,12 +6,25 @@ import useStore_user from 'zus/user/user';
 import moment from 'moment';
 import axios from 'axios';
 import useStore_modal from 'zus/modal/modal';
+import useStore_test from 'zus/test/index';
+import { useRouter } from 'next/router';
 
 const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) => 
 {
     const time = useStore_time();
     const user = useStore_user();
     const modal = useStore_modal();
+    const login = useStore_test();
+    const router = useRouter();
+
+    useEffect(()=>{
+      if(!login.login){
+          router.push('/')
+          modal.set_modal_success()
+          modal.set_modal_text('로그인이 필요한 기능입니다..')
+          modal.set_modal();
+      }
+    },[])
 
     const onSubmit = async (e) =>{
         e.preventDefault();
