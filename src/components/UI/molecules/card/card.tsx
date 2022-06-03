@@ -15,17 +15,28 @@ return (
         <CardStyle {...props} onClick={(e)=>props.card_click(e,props.data)}>
                 <div className='title'>
                     <div>
-                    {props.data.title || '제목입니다.'}
+                    {
+                    props.data != undefined ?
+                    props.data.title  
+                    :
+                    '제목입니다.'
+                    }
                     </div>
                     <div>
-                    {
-                        props.cal(props.data.start_time,props.data.end_time)
-                    }분
+                    { props.data != undefined ?
+                        props.cal(props.data.start_time,props.data.end_time):
+                        '0'
+                    }
+                    분
                     </div>
                 </div>
                 
                 <div className='comment'>  
-                    {props.data.memo || '내용입니다.'}
+                    {
+                    props.data != undefined ?
+                    props.data.memo 
+                    :
+                    '내용입니다.'}
                 </div>
         </CardStyle>
 );

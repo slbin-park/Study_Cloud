@@ -4,6 +4,7 @@ import Head from 'next/head';
 import useStore from 'zus/test/index';
 import useStore_user from 'zus/user/user';
 import useStore_record from 'zus/record/record';
+import useStore_modal from 'zus/modal/modal';
 import axios from 'axios';
 import moment from 'moment';
 
@@ -11,7 +12,11 @@ const LoginPage: NextPage<any> = ({}) => {
     const bears = useStore();
     const user = useStore_user();
     const record = useStore_record();
-
+    const modal = useStore_modal();
+    const set_modal = (e)=>{
+      e.preventDefault();
+      modal.set_modal();
+    }
     const get_record = (e) =>{
       e.preventDefault();
       e.persist();
@@ -57,6 +62,8 @@ const LoginPage: NextPage<any> = ({}) => {
       안녕하세요
       {bears.bears}
       <button onClick={set_zus}> 증가 </button>
+      <button onClick={set_modal}> 모달키기 </button>
+
     </>
   );
 };

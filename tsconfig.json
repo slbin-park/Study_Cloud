@@ -22,6 +22,8 @@
     "paths": {
 		  "page/*": ["src/components/pages/*"],
 		  "zus/*": ["src/zustand/*"],
+		  "layout/*": ["src/components/layout/*"],
+
 		}
   },
   "include": [

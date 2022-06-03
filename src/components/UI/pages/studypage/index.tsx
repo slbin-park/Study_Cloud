@@ -43,13 +43,13 @@ const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) =>
             end_m : parseInt(e.target.end_m.value),
           };
           console.log(data)
-        //   for(let key in data){
-        //       if(data[key] === 'none'){
-        //           console.log('없는 항목이씀')
-
-        //           return 0;
-        //       }
-        //   }
+          for(let key in data){
+              if(data[key] === 'none'){
+                  modal.set_modal_text('입력되지 않은 항목이 있습니다.');
+                  modal.set_modal();
+                  return 0;
+              }
+          }
 
           // 시간 더하기
           if(data.start == '오전'){

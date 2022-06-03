@@ -18,35 +18,20 @@ const click_init = ()=>{
 }
 
 const ModalComponent: React.FC<any> = (props) => {
-
-    const modal = props.modal;
-    const modal_click = props.modal_click ;
-
+    // const modal = props.modal || modal_init;
+    // console.log(modal_init)
+    // console.log(modal)
+    // const modal_click = props.modal_click || click_init;
+    const modal = useStore();
+    const modal_click = async ()=>{
+        modal.set_modal();
+        if(modal.modal_success === true){
+            modal.set_modal_success();
+        }
+    }
     return (
     <>
         <ModalStyle {...props} >
-            {props.test ? 
-            <div className='board_div'>
-                <div className='board_title'>
-                    제목입니다.
-                </div>
-                <div className='board_info'>
-                    작성자 : 송승준
-                </div>
-                <div className='board_content_div'>
-                    <div className='board_content'>
-                    저능 멍청이 입니다.
-                    <br/>
-                    오전 1시 30분
-                    <br/>
-                    오후 1시 30분
-                    </div>
-                </div>
-                <div className='board_reply_div'>
-                    
-                </div>
-            </div>
-            :
             <div className='modal_div'>
                 <div className='modal_title'>
                     {modal.modal_text}
@@ -66,7 +51,6 @@ const ModalComponent: React.FC<any> = (props) => {
                 } 
                 </div>
             </div>
-            }
         </ModalStyle>
     </>
     );

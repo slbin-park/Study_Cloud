@@ -40,7 +40,7 @@ const Card: React.FC<CardType> = (props, {}: CardType) => {
     
 
     return(
-<CardComponent {...props} cal={cal} card_click={card_click}/>
+    <CardComponent {...props} cal={cal} card_click={card_click}/>
 )};
 
 export default Card;
