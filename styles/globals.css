@@ -1,7 +1,14 @@
+@font-face {
+  font-family: "cokkie";
+  src: url("./font.ttf");
+}
+
 *{
+  font-family: "cokkie" !important;;
     box-sizing: border-box;
     word-break: keep-all;
   }
+
   
   
   html, body, div, span, applet, object, iframe,
