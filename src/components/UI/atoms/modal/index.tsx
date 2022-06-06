@@ -26,7 +26,7 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
       };
     return(
     
-    <ModalComponent  modal ={modal} modal_click={modal_click} {...props} modal_ref={modal_ref} modal_close={modal_close} />
+    <ModalComponent  modal ={modal} modal_click={modal_click} {...props} modal_ref={modal_ref} modal_close={modal_close} test={modal.modal_board}/>
 
 )};
 

@@ -26,7 +26,7 @@ const ModalComponent: React.FC<any> = (props) => {
     return (
     <>
         <ModalStyle {...props}  onMouseDown={modal_close} >
-            {!props.test ? 
+            {props.test ? 
                 <div ref={modal_ref} className='board_div'>
                 <div className='board_title'>
                     제목입니다.

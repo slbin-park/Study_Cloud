@@ -15,7 +15,7 @@ return css`
     .line_text{
         width:80%;
         height:20%;
-        margin-bottom:5%;
+        padding-bottom:30px;
     }
     .memo{
         width:80%;
