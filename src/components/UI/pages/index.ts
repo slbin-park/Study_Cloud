@@ -4,6 +4,7 @@ import StduyPage from './studypage'
 import LoginPage from './loginpage'
 import RegisterPage from './registerpage'
 import EditPage from './editpage'
+import BoardPage from './boardpage'
 
 const Pages = {
     Mainpage,
@@ -12,6 +13,7 @@ const Pages = {
     LoginPage,
     RegisterPage,
     EditPage,
+    BoardPage,
 };
 
 export default Pages;
@@ -22,5 +24,6 @@ export {
     StduyPage,
     LoginPage,
     RegisterPage,
-    EditPage
+    EditPage,
+    BoardPage,
 };

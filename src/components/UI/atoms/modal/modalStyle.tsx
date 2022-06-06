@@ -78,7 +78,7 @@ return css`
         }
         .modal_button{
             width:50%;
-            height:20%;
+            height:40px;
         }
     }
 
@@ -107,6 +107,7 @@ return css`
 
         .board_title{
             display:flex;
+            padding:10px;
             background-color: ${middle};
             color : white;
             font-size: 4vh;

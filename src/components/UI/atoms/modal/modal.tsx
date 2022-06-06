@@ -38,9 +38,13 @@ const ModalComponent: React.FC<any> = (props) => {
                     <div className='board_content'>
                     저능 멍청이 입니다.
                     <br/>
-                    오전 1시 30분
                     <br/>
-                    오후 1시 30분
+                    시작시간 : 오전 1시 30분
+                    <br/>
+                    종료시간 : 오후 1시 30분
+                    <br/>
+                    <br/>
+                    총 시간 : 12시간
                     </div>
                 </div>
                 <div className='board_reply_input'>

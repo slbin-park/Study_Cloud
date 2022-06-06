@@ -17,7 +17,7 @@ const NavBarComponent: React.FC<any> = (props) => {
             <div className='menu' >
             <IconText icon='user' href='/'/>
             <IconText icon='notice'/>
-            <IconText icon='community'/>
+            <IconText icon='community' href='/board'/>
             <IconText icon='study' href='/record'/>
             <IconText icon='info'/>
             <div onClick={props.logout}>
