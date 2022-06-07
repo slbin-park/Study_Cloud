@@ -28,7 +28,7 @@ return (
             </div>
             {
                 props.data.length !=0 ? 
-                props.data.map((data)=>{
+                props.data.reverse().map((data)=>{
                     return(
                     <Card key={data.share_date} data={data}>
                     </Card>

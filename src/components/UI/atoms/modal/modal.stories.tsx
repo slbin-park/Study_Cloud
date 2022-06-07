@@ -31,4 +31,13 @@ Default.args = {
         start_time : '14:30:00',
         end_time : '16:30:00',
     },
+    reply_data : [{
+        name : '송승준',
+        reply_date : '2022-06-12 12:30',
+        reply : 'ㅋ 별거없네'
+    },{
+        name : '조재현',
+        reply_date : '2022-06-12 12:30',
+        reply : '미친인싸비틱홍어련'
+    }]
 };

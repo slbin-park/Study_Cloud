@@ -30,6 +30,7 @@ const ModalComponent: React.FC<any> = (props) => {
     const modal_click = props.modal_click ;
     const modal_ref = props.modal_ref;
     const modal_close = props.modal_close;
+
     return (
     <>
         <ModalStyle {...props}  onMouseDown={modal_close} >
@@ -39,7 +40,9 @@ const ModalComponent: React.FC<any> = (props) => {
                     {props.board.title}
                 </div>
                 <div className='board_info'>
-                    작성자 : {props.board.id}
+                    작성자 : {props.board.name}
+                    <br/>
+                    작성일 : {moment(props.board.share_date).format('YYYY년MM월DD일 HH:mm')}
                 </div>
                 <div className='board_content_div'>
                     <div className='board_content'>
@@ -55,28 +58,34 @@ const ModalComponent: React.FC<any> = (props) => {
                     </div>
                 </div>
                 <div className='board_reply_input'>
-                    <input type='text'></input>
+                    <input type='text' value={props.reply} onChange={(e)=>props.set_reply(e.target.value)}></input>
                     <div className='board_reply_button'>
-                        <Button>
+                        <Button onClick={props.modal_reply}>
                             등록
                         </Button>
                     </div>
                 </div>
-                {Array(5).fill(0).map(()=>{
-                    return(
-                    <div className='board_reply_div' >
-                    <div className='board_reply_name'>
-                        박슬빈
-                    </div>
-                    <div className='board_reply_date'>
-                        2022-06-30
-                    </div>
-                    <div className='board_reply_comment'>
-                        댓글입니다.
-                    </div>
-                    </div>
-                    )
-                })}
+                {
+                    props.reply_data.length !== 0 ?
+                    props.reply_data.reverse().map((data)=>{
+                        return(
+                            <div className='board_reply_div' >
+                            <div className='board_reply_name'>
+                                {data.name}
+                            </div>
+                            <div className='board_reply_date'>
+                                {moment(data.reply_date).format("YYYY년MM월DD일 HH:mm")}
+                            </div>
+                            <div className='board_reply_comment'>
+                                {data.reply}
+                            </div>
+                            </div>
+                        )
+                    })
+                    :
+                    ''
+
+                }
                 
             </div>
             :

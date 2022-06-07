@@ -5,6 +5,7 @@ import useStore from 'zus/test/index';
 import useStore_user from 'zus/user/user';
 import useStore_record from 'zus/record/record';
 import useStore_modal from 'zus/modal/modal';
+import useStore_board from 'zus/modal/board';
 import axios from 'axios';
 import moment from 'moment';
 
@@ -13,25 +14,31 @@ const LoginPage: NextPage<any> = ({}) => {
     const user = useStore_user();
     const record = useStore_record();
     const modal = useStore_modal();
+    const board = useStore_board();
+
     const set_modal = (e)=>{
       e.preventDefault();
       modal.set_modal_board();
       modal.set_modal();
     }
+
     const get_record = (e) =>{
       e.preventDefault();
       e.persist();
-      axios.post("http://localhost:3001/api/board/get_board",{
-        },{
-            headers : {
-                Authorization : user.access_token,
-            },
-        }).then((res)=>{
-            console.log(res.data)
-            // moment.duration(t2.diff(t1)).asHours());
-        }).catch((err)=>{
-            console.log(err)
-        })
+      board.set_reply_data(board.data.board_num)
+      console.log(board)
+      // axios.post("http://localhost:3001/api/board/get_reply",{
+      //   board_num : 1
+      //   },{
+      //       headers : {
+      //           Authorization : user.access_token,
+      //       },
+      //   }).then((res)=>{
+      //       console.log(res.data)
+      //       // moment.duration(t2.diff(t1)).asHours());
+      //   }).catch((err)=>{
+      //       console.log(err)
+      //   })
     }
 
     const set_zus = (e)=>{
