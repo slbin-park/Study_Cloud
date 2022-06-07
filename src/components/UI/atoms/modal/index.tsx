@@ -2,18 +2,22 @@ import React, { useEffect, useState, useRef } from 'react';
 import ModalComponent from './modal';
 import {ModalType} from './modalType'
 import useStore from 'zus/modal/modal';
+import useStore_board from 'zus/modal/board';
+
 import {useRouter} from 'next/router';
+import moment from 'moment';
 
 const Button: React.FC<ModalType> = (props, {}: ModalType) => {
     const modal = useStore();
     const router = useRouter();
-
+    const board = useStore_board();
     const modal_ref = useRef<any>()
     const modal_click = async ()=>{
         modal.set_modal();
         if(modal.modal_success === true){
             modal.set_modal_success();
         }
+        router.push('/')
     }
 
 
@@ -28,6 +32,8 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
         else{
         }
       };
+    
+
     useEffect(()=>{
         if(modal.modal == true){
             document.body.style.overflow = "hidden";
@@ -38,7 +44,7 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
     },[modal.modal])
     return(
     
-    <ModalComponent  modal ={modal} modal_click={modal_click} {...props} modal_ref={modal_ref} modal_close={modal_close} test={router.pathname=='/board'}/>
+    <ModalComponent  modal ={modal} modal_click={modal_click} {...props} modal_ref={modal_ref} modal_close={modal_close}  test={router.pathname=='/board'} board = {board}/>
 
 )};
 

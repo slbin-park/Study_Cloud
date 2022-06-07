@@ -17,12 +17,13 @@ return css`
     }
     .title_right_icon{
         cursor: pointer;
-        color:middle;
+        color:${middle};
         margin-left:5px;
         height:45px;
         width:45px;
     }
     h1{
+        color : ${middle};
         margin:0;
         padding:0;
     }

@@ -5,16 +5,23 @@ import {} from '@fortawesome/free-brands-svg-icons'; // 브랜드 아이콘
 import {faCommentDots,faSearch,faBars} from '@fortawesome/free-solid-svg-icons'; // fill 타입 아이콘
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
-import Atoms , {Button,Input} from '../'
+import Atoms , {Button,Input} from '../';
 import ModalStyle from './modalStyle';
-import useStore from 'zus/modal/modal'
-import Link from 'next/link'
+import useStore from 'zus/modal/modal';
+import Link from 'next/link';
+import moment from 'moment';
+
 const  modal_init = {
     modal_text:'텍스트입니다.',
     modal : true,
 }
 const click_init = ()=>{
     console.log(1234)
+}
+const cal = (a ,b) =>{
+    a = moment(a,'HH:mm:ss')
+    b = moment(b,'HH:mm:ss')
+    return moment.duration(b.diff(a)).asMinutes()
 }
 
 const ModalComponent: React.FC<any> = (props) => {
@@ -29,22 +36,22 @@ const ModalComponent: React.FC<any> = (props) => {
             {props.test ? 
                 <div ref={modal_ref} className='board_div'>
                 <div className='board_title'>
-                    제목입니다.
+                    {props.board.title}
                 </div>
                 <div className='board_info'>
-                    작성자 : 송승준
+                    작성자 : {props.board.id}
                 </div>
                 <div className='board_content_div'>
                     <div className='board_content'>
-                    저능 멍청이 입니다.
+                    {props.board.memo}
                     <br/>
                     <br/>
-                    시작시간 : 오전 1시 30분
+                    시작시간 : {props.board.start_time}
                     <br/>
-                    종료시간 : 오후 1시 30분
+                    종료시간 : {props.board.end_time}
                     <br/>
                     <br/>
-                    총 시간 : 12시간
+                    총 시간 : {cal(props.board.start_time,props.board.end_time)} 분
                     </div>
                 </div>
                 <div className='board_reply_input'>
@@ -78,18 +85,9 @@ const ModalComponent: React.FC<any> = (props) => {
                     {modal.modal_text}
                 </div>
                 <div className='modal_button'>
-                
-                {modal.modal_success ? 
-                    <Link href='/'>
                         <Button onClick={modal_click}>
                             확인
                         </Button>
-                    </Link>
-                :
-                <Button onClick={modal_click}>
-                확인
-                </Button>
-                } 
                 </div>
             </div>
             }
