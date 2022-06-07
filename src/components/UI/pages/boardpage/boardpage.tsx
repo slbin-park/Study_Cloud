@@ -26,9 +26,18 @@ return (
                     </div>
                 </div>
             </div>
-            <Card/>
-            <Card/>
-            <Card/>
+            {
+                props.data.length !=0 ? 
+                props.data.map((data)=>{
+                    console.log(data)
+                    return(
+                    <Card data={data}>
+                    </Card>
+                    )
+                })
+                :
+                ''
+            }
         </BoardPageStyle>
     </>
 );

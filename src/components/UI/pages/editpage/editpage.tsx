@@ -34,15 +34,14 @@ return (
             </div>
             
             <div className='button_div'>
-            <Button onClick={(e)=>props.onclick2(e)}> 공유 </Button>
+            <Button onClick={(e)=>props.share(e)}> 공유 </Button>
             </div>
             
             <div className='button_div'>
             <Button onClick={(e)=>props.onclick2(e)}> 삭제 </Button>
             </div>
+
         </div>
-
-
 
     </EditPageStyle>
 </>

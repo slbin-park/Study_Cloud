@@ -10,6 +10,7 @@ import useStore_modal from 'zus/modal/modal';
 import useStore_test from 'zus/test/index';
 import { useRouter } from 'next/router';
 
+
 const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
     const edit = useStore();
     const time = useStore_time();
@@ -103,9 +104,31 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
           modal.set_modal();
         })
     }
-    return(
-    <EditPageComponent {...props} onSubmit={onSubmit} onclick2={onclick2}/>
 
+    const share = (e) =>{
+      e.preventDefault();
+
+      axios.post("http://localhost:3001/api/board/save_share",{
+            id : edit.id,
+            post_num : edit.post_num,
+            date : moment().format('YYYY.MM.DD HH:mm')
+        },{
+            headers : {
+                Authorization : user.access_token,
+            },
+        }).then((res)=>{
+          if(res.data.success){
+            modal.set_modal_text('공유에 성공하셨습니다.')
+            modal.set_modal_success()
+          }
+        }).catch((err)=>{
+            console.log(err)
+        }).then(()=>{
+          modal.set_modal();
+        })
+    }
+    return(
+      <EditPageComponent {...props} onSubmit={onSubmit} onclick2={onclick2} share={share} />
     )};
 
 export default EditPage;

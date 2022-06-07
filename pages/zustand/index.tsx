@@ -15,24 +15,19 @@ const LoginPage: NextPage<any> = ({}) => {
     const modal = useStore_modal();
     const set_modal = (e)=>{
       e.preventDefault();
+      modal.set_modal_board();
       modal.set_modal();
     }
     const get_record = (e) =>{
       e.preventDefault();
       e.persist();
-      axios.post("http://localhost:3001/api/record/get",{
-            id : user.id,
+      axios.post("http://localhost:3001/api/board/get_board",{
         },{
             headers : {
                 Authorization : user.access_token,
             },
         }).then((res)=>{
-            let a = moment(res.data.response[0].end_time,'HH:mm:ss')
-            let b = moment(res.data.response[0].start_time,'HH:mm:ss')
-            console.log(a)
-            console.log(b)
-            console.log(moment.duration(a.diff(b)).asMinutes())
-
+            console.log(res.data)
             // moment.duration(t2.diff(t1)).asHours());
         }).catch((err)=>{
             console.log(err)
@@ -63,6 +58,8 @@ const LoginPage: NextPage<any> = ({}) => {
       {bears.bears}
       <button onClick={set_zus}> 증가 </button>
       <button onClick={set_modal}> 모달키기 </button>
+      <button onClick={get_record}> api테스트 </button>
+
 
     </>
   );
