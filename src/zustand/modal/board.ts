@@ -18,7 +18,7 @@ const useStore = createStore<any>(set=>({
         const response = await axios.post(url,{
             board_num
         })
-        set({reply : response.data.reply})
+        set({reply : response.data.reply.reverse()})
     }
 }))
 

@@ -17,7 +17,7 @@ const Globals = {
         $color_gray : '#f0f3f5',
         
         // 검은색
-        $color_bloack : '#262626',
+        $color_black : '#262626',
     }
 };
 export default Globals;

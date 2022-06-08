@@ -67,7 +67,7 @@ const ModalComponent: React.FC<any> = (props) => {
                 </div>
                 {
                     props.reply_data.length !== 0 ?
-                    props.reply_data.reverse().map((data)=>{
+                    props.reply_data.map((data)=>{
                         return(
                             <div className='board_reply_div' >
                             <div className='board_reply_name'>

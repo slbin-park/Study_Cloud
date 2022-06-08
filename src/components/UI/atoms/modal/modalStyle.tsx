@@ -7,6 +7,8 @@ ${(props) => {
     const show_modal = props.modal.modal ? 'flex' : 'none' ; 
     const middle = props.theme.palette.$color_middle;
     const high = props.theme.palette.$color_high;
+    const black = props.theme.palette.$color_black;
+
 
     const animation = keyframes`
         0% {
@@ -151,8 +153,9 @@ return css`
             padding-left : 10%;
             padding-right : 10%;
             padding-bottom : 20px;
-            color : ${high};
+            color : ${black};
             .board_reply_name{
+                font-weight : bold;
                 font-size:17px;
                 margin-bottom: 5px;
             }
