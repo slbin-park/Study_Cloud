@@ -27,11 +27,15 @@ const BoardPageComponent: React.FC<any> = (props) => {
             </div>
           </div>
         </div>
-        {props.data.length != 0
-          ? props.data.map((data) => {
-              return <Card key={data.share_date} data={data}></Card>;
-            })
-          : ''}
+        <div className="car_content">
+          {props.data.length != 0
+            ? props.data.map((data) => {
+                return (
+                  <Card board={true} key={data.share_date} data={data}></Card>
+                );
+              })
+            : ''}
+        </div>
       </BoardPageStyle>
     </>
   );

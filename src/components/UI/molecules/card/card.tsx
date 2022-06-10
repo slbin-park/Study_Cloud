@@ -6,25 +6,20 @@ import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'; // fill �
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import Link from 'next/link';
+import Card_Regular from './component/card_regular';
+import Card_Board from './component/card_board';
 
 import CardStyle from './cardStyle';
 
 const CardComponent: React.FC<any> = (props) => {
+  console.log(props.board);
   return (
     <CardStyle {...props} onClick={(e) => props.card_click(e, props.data)}>
-      <div className="title">
-        <div>{props.data != undefined ? props.data.title : '제목입니다.'}</div>
-        <div>
-          {props.data != undefined
-            ? props.cal(props.data.start_time, props.data.end_time)
-            : '0'}
-          분
-        </div>
-      </div>
-
-      <div className="comment">
-        {props.data != undefined ? props.data.memo : '내용입니다.'}
-      </div>
+      {props.board === true ? (
+        <Card_Board {...props} />
+      ) : (
+        <Card_Regular {...props} />
+      )}
     </CardStyle>
   );
 };

@@ -40,6 +40,7 @@ const ModalStyle = styled.div.attrs((props) => ({}))<ModalType>`
 
     return css`
       position: fixed;
+
       top: 0;
       right: 0;
       bottom: 0;

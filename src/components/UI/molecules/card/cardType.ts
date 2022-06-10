@@ -1,3 +1,4 @@
 export interface CardType {
-    data : any;
+  data: any;
+  board?: boolean;
 }
