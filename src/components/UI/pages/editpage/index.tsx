@@ -121,6 +121,9 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
             modal.set_modal_text('공유에 성공하셨습니다.')
             modal.set_modal_success()
           }
+          else{
+            modal.set_modal_text(res.data.msg)
+          }
         }).catch((err)=>{
             console.log(err)
         }).then(()=>{

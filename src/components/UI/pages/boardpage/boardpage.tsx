@@ -20,7 +20,7 @@ return (
                     </h1>
                 </div>
                 <div className='title_right'>
-                    <Input></Input>
+                    <Input placeholder='댓글을 입력해주세요.'></Input>
                     <div className='title_right_icon'>
                     <FontAwesomeIcon icon={faSearch} style={{width:'100%',height:'100%'}}/>
                     </div>

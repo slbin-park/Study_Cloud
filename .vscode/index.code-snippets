@@ -7,7 +7,7 @@
             "import {$Name Type} from './$NameType'",
             "",
             "const $Name : React.FC<$Name Type> = (props, {}: $Name Type) => (",
-              "<$Name Component {...props} />",
+            "     <$Name Component {...props} />",
             ");",
             "",
             "export default $Name;"
