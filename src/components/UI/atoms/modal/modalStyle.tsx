@@ -1,13 +1,15 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ModalType } from './modalType';
-import useStore from 'zus/modal/modal';
+import useStore from 'zus/test/index';
+
 const ModalStyle = styled.div.attrs((props) => ({}))<ModalType>`
   ${(props) => {
     const show_modal = props.modal.modal ? 'flex' : 'none';
     const middle = props.theme.palette.$color_middle;
     const high = props.theme.palette.$color_high;
     const black = props.theme.palette.$color_black;
+    const user = useStore();
 
     const animation = keyframes`
         0% {
@@ -28,6 +30,7 @@ const ModalStyle = styled.div.attrs((props) => ({}))<ModalType>`
             width: 30%;
             height: 30%;
         }
+        
         50% {
             width: 50%;
             height: 50%;
@@ -176,6 +179,7 @@ const ModalStyle = styled.div.attrs((props) => ({}))<ModalType>`
           width: 80%;
           height: 50px;
           margin-bottom: 20px;
+          align-items: center;
           .board_reply_button {
             width: 20%;
             margin-left: 10px;

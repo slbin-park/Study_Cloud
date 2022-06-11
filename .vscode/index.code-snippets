@@ -1,17 +1,17 @@
 {
-	"Set Base React Form": {
-		"prefix": "idx",
-		"body": [
-            "import React, { useEffect, useState, useRef } from 'react';",
-            "import $Name Component from './$Name';",
-            "import {$Name Type} from './$NameType'",
-            "",
-            "const $Name : React.FC<$Name Type> = (props, {}: $Name Type) => (",
-            "     <$Name Component {...props} />",
-            ");",
-            "",
-            "export default $Name;"
-		],
-		"description": "Set Base indexfrom"
-	}
+  "Set Base React Form": {
+    "prefix": "idx",
+    "body": [
+      "import React, { useEffect, useState, useRef } from 'react';",
+      "import $Name Component from './$Name ';",
+      "import {$Name Type} from './$Name Type'",
+      "",
+      "const $Name : React.FC<$Name Type> = (props, {}: $Name Type) => (",
+      "     <$Name Component {...props} />",
+      ");",
+      "",
+      "export default $Name;"
+    ],
+    "description": "Set Base indexfrom"
+  }
 }

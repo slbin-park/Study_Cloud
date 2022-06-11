@@ -2,19 +2,17 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import LoginComponent from 'page/loginPage/index';
+import NoticeComponent from 'page/noticePage/index';
 
-const LoginPage: NextPage<any> = ({}) => {
+const NoticePage: NextPage<any> = ({}) => {
   return (
     <>
       <Head>
         <title>로그인 페이지</title>
       </Head>
-      <LoginComponent />
+      <NoticeComponent />
     </>
   );
 };
 
-// LoginPage.getInitialProps = () => {};
-
-export default LoginPage;
+export default NoticePage;

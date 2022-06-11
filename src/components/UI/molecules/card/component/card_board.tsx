@@ -13,7 +13,6 @@ import Board_Style from './style/boardStyle';
 import moment from 'moment';
 
 const Card_BoardComponent: React.FC<any> = (props) => {
-  console.log(props);
   return (
     <Board_Style {...props}>
       <div className="title">

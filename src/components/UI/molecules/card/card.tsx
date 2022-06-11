@@ -12,15 +12,20 @@ import Card_Board from './component/card_board';
 import CardStyle from './cardStyle';
 
 const CardComponent: React.FC<any> = (props) => {
-  console.log(props.board);
   return (
-    <CardStyle {...props} onClick={(e) => props.card_click(e, props.data)}>
+    <>
       {props.board === true ? (
-        <Card_Board {...props} />
+        <Card_Board
+          {...props}
+          onClick={(e) => props.card_click(e, props.data)}
+        />
       ) : (
-        <Card_Regular {...props} />
+        <Card_Regular
+          {...props}
+          onClick={(e) => props.card_click(e, props.data)}
+        />
       )}
-    </CardStyle>
+    </>
   );
 };
 

@@ -6,8 +6,8 @@ import {} from '@fortawesome/free-brands-svg-icons'; // 브랜드 아이콘
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'; // fill 타입 아이콘
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
-
-import CalendarStyle from './calendarStyle';
+import useStore from 'zus/record/record';
+import CalendarStyle, { Days_style } from './calendarStyle';
 
 const CalendarComponent: React.FC<any> = (props) => {
   const [getMoment, setMoment] = useState(moment());
@@ -55,6 +55,7 @@ const CalendarComponent: React.FC<any> = (props) => {
 };
 
 const Calendar = ({ time, getMoment, setMoment }) => {
+  const record = useStore();
   const today = getMoment;
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek =
@@ -76,36 +77,47 @@ const Calendar = ({ time, getMoment, setMoment }) => {
               .week(week)
               .startOf('week')
               .add(index, 'day'); //d로해도되지만 직관성
+            const cnt = record.data.reduce((acc, date) => {
+              // console.log('date');
+              // console.log(moment(date.date).format('YYYYMMDD'));
+              // console.log('time');
+              // console.log(time.time.format('YYYYMMDD'));
+              return (acc +=
+                moment(date.date).format('YYYYMMDD') === days.format('YYYYMMDD')
+                  ? 1
+                  : 0);
+            }, 0);
 
             if (time.time.format('YYYYMMDD') === days.format('YYYYMMDD')) {
               return (
-                <div
-                  className="calendar_body_days_focus"
+                <Days_style
+                  bgColor={true}
                   onClick={() => time.set_time(days)}
                   key={index}
+                  todo_cnt={cnt}
                 >
                   <span style={{ color: 'red' }}>{days.format('D')}</span>
-                </div>
+                </Days_style>
               );
             } else if (days.format('MM') !== today.format('MM')) {
               return (
-                <div
-                  className="calendar_body_days"
+                <Days_style
+                  todo_cnt={cnt}
                   onClick={() => time.set_time(days)}
                   key={index}
                 >
                   <span style={{ color: 'gray' }}>{days.format('D')}</span>
-                </div>
+                </Days_style>
               );
             } else {
               return (
-                <div
-                  className="calendar_body_days"
+                <Days_style
+                  todo_cnt={cnt}
                   onClick={() => time.set_time(days)}
                   key={index}
                 >
                   <span>{days.format('D')}</span>
-                </div>
+                </Days_style>
               );
             }
           })}
