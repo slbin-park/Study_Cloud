@@ -36,7 +36,7 @@ const RecordPageComponent: React.FC<any> = (props) => {
         </div>
         <Link href="/study">
           <div className="Icon">
-            <Icon />
+            <Icon icon_name="plus" />
           </div>
         </Link>
       </RecordPageStyle>

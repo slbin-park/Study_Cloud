@@ -8,7 +8,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'; /
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
-import { Button } from '../../atoms/index';
+import { Button, Icon } from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
 import { Card, Timer } from '../../molecules/index';
 
@@ -70,6 +70,16 @@ const MainPageComponent: React.FC<any> = (
             })}
           </div>
         </div>
+        {login.login ? (
+          <>
+            <div className="icon_text">12</div>
+            <div className="Icon">
+              <Icon icon_name="bell" />
+            </div>
+          </>
+        ) : (
+          ''
+        )}
       </MainPageStyle>
     </>
   );

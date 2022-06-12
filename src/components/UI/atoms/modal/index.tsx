@@ -41,7 +41,9 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
   };
 
   const modal_reply = (e) => {
+    console.log(board.data.id);
     const data = {
+      userid: board.data.id,
       board_num: board.data.board_num,
       id: user.id,
       reply,
