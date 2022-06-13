@@ -10,15 +10,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 
 import { Button, Icon } from '../../atoms/index';
 import MainPageStyle from './mainpageStyle';
-import { Card, Timer } from '../../molecules/index';
+import { Card, Timer, NotiBar } from '../../molecules/index';
 
 const MainPageComponent: React.FC<any> = (
-  { time, user, login, record, timer, set_timer },
+  { time, user, login, record, timer, set_timer, noti_data },
   props,
 ) => {
+  const [appear, set_appear] = useState(false);
   return (
     <>
       <MainPageStyle {...props}>
+        <NotiBar appear={appear} data={noti_data}></NotiBar>
         <div className="head_box">
           <FontAwesomeIcon
             icon={faUserCircle}
@@ -72,8 +74,10 @@ const MainPageComponent: React.FC<any> = (
         </div>
         {login.login ? (
           <>
-            <div className="icon_text">12</div>
-            <div className="Icon">
+            <div className="icon_text">
+              {noti_data.length ? noti_data.length : 0}
+            </div>
+            <div className="Icon" onClick={() => set_appear(!appear)}>
               <Icon icon_name="bell" />
             </div>
           </>

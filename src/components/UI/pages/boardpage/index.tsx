@@ -19,7 +19,6 @@ const BoardPage: React.FC<BoardPageType> = (props, {}: BoardPageType) => {
         },
       )
       .then((res) => {
-        console.log(res.data);
         setdata(res.data.board.reverse());
       })
       .catch((err) => {

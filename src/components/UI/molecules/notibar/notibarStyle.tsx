@@ -1,11 +1,11 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { NavBarType } from './navbarType';
+import { NotiBarType } from './notibarType';
 
-const NavBarStyle = styled.div.attrs((props) => ({}))<NavBarType>`
+const NotiBarStyle = styled.div.attrs((props) => ({}))<NotiBarType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
-    const appear = props.hamburger ? 'block' : 'none';
+    const appear = props.appear ? 'block' : 'none';
     const animation = keyframes`
         0% {
             width: 10%;
@@ -18,18 +18,18 @@ const NavBarStyle = styled.div.attrs((props) => ({}))<NavBarType>`
         }
         `;
     return css`
+      overflow: scroll;
       display: ${appear};
       animation: ${animation} 0.1s linear;
       transition: all 0.3s;
-      background-color: white;
-      z-index: 10;
-      border-left: 2px solid ${middle};
-      width: 30%;
+      z-index: 200;
+      width: 40%;
       position: fixed;
       top: 0;
       right: 0;
       height: 100%;
-      margin-top: 70px;
+      padding-top: 70px;
+      padding-bottom: 100px;
       .menu {
         margin: 10%;
       }
@@ -37,4 +37,4 @@ const NavBarStyle = styled.div.attrs((props) => ({}))<NavBarType>`
   }};
 `;
 
-export default NavBarStyle;
+export default NotiBarStyle;

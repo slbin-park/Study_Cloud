@@ -74,18 +74,17 @@ const MainPageStyle = styled.div.attrs((props) => ({}))<MainPageType>`
       .Icon {
         color: ${middle};
         position: fixed;
-        z-index: 1;
         bottom: 0;
         right: 0;
         margin-right: 30px;
         margin-bottom: 30px;
         width: 50px;
         height: 50px;
+        z-index: 300;
       }
       .icon_text {
         color: red;
         position: fixed;
-        z-index: 1;
         bottom: 0;
         right: 0;
         margin-right: -6px;
