@@ -17,16 +17,19 @@ const NotiBar: React.FC<NotiBarType> = (props, {}: NotiBarType) => {
     console.log('data');
     console.log(data);
     axios
-      .post(
-        'http://localhost:3001/api/board/get-one-board/' + data.noti_num,
+      .get(
+        'http://localhost:3001/api/board/get-one-board/' +
+          data.noti_num +
+          '/' +
+          data.reply_id,
         {},
       )
       .then((res) => {
-        console.log(res.data.board);
-        board.set_data(res.data.board);
-        modal.set_modal();
-        board.set_reply_data(data.noti_num);
         router.push('/board');
+        console.log(res.data);
+        board.set_data(res.data.board);
+        board.set_reply_data(data.noti_num);
+        modal.set_modal();
       })
       .catch((err) => {
         console.log(err);

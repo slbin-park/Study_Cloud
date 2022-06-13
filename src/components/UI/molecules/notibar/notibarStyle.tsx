@@ -5,16 +5,16 @@ import { NotiBarType } from './notibarType';
 const NotiBarStyle = styled.div.attrs((props) => ({}))<NotiBarType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
-    const appear = props.appear ? 'block' : 'none';
+    const appear = props.appear ? 'flex' : 'none';
     const animation = keyframes`
         0% {
-            width: 10%;
+            height: 30%;
         }
         50% {
-            width: 20%;
+            height: 60%;
         }
         100% {
-            width: 30%;
+            height: 90%;
         }
         `;
     return css`
@@ -30,6 +30,8 @@ const NotiBarStyle = styled.div.attrs((props) => ({}))<NotiBarType>`
       height: 100%;
       padding-top: 70px;
       padding-bottom: 100px;
+      flex-direction: column;
+      justify-content: flex-end;
       .menu {
         margin: 10%;
       }
