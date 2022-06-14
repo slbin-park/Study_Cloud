@@ -18,7 +18,15 @@ const RecordPageComponent: React.FC<any> = (props) => {
       <RecordPageStyle>
         <Calendar />
         <div className="til">
-          <div className="til_head">오늘 한 일</div>
+          <div className="til_head">
+            <div className="til_head_todo">오늘 한 일</div>
+            <div className="til_head_st">통계</div>
+          </div>
+          <div className="til_select_St">
+            <div className="til_week">주간</div>
+            <div className="til_month">월간</div>
+          </div>
+
           <div className="til_card">
             {props.record.data.map((data) => {
               const cur_day = moment(data.date).format('YYYYMMDD');

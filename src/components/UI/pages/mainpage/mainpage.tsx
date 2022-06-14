@@ -77,7 +77,10 @@ const MainPageComponent: React.FC<any> = (
             <div className="icon_text">
               {noti_data.length ? noti_data.length : 0}
             </div>
-            <div className="Icon" onClick={() => set_appear(!appear)}>
+            <div
+              className="Icon"
+              onClick={() => (noti_data.length != 0 ? set_appear(!appear) : '')}
+            >
               <Icon icon_name="bell" />
             </div>
           </>

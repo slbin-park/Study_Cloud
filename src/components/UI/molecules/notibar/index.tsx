@@ -25,9 +25,13 @@ const NotiBar: React.FC<NotiBarType> = (props, {}: NotiBarType) => {
         {},
       )
       .then((res) => {
+        const noti_data = {
+          ...res.data.board,
+          board_num: data.noti_num,
+        };
         router.push('/board');
         console.log(res.data);
-        board.set_data(res.data.board);
+        board.set_data(noti_data);
         board.set_reply_data(data.noti_num);
         modal.set_modal();
       })

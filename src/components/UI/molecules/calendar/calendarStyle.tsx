@@ -87,11 +87,11 @@ const Days_style = styled.div.attrs((props) => ({}))<CalendarType>`
     console.log(props.todo_cnt);
     if (props.todo_cnt >= 10) {
       days_color = '#ff6102';
-    } else if (props.todo_cnt >= 7) {
-      days_color = '#ff731e';
     } else if (props.todo_cnt >= 5) {
-      days_color = '#ff873c';
+      days_color = '#ff731e';
     } else if (props.todo_cnt >= 3) {
+      days_color = '#ff873c';
+    } else if (props.todo_cnt >= 2) {
       days_color = '#ffa873';
     } else if (props.todo_cnt >= 1) {
       days_color = '#ffcbac';

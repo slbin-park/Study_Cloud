@@ -49,6 +49,7 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
       reply,
       date: moment().format('YYYY-MM-DD HH:mm'),
     };
+    console.log(board.data);
     axios
       .post(
         'http://localhost:3001/api/board/save_reply',
