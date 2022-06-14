@@ -20,8 +20,15 @@ const RecordPageComponent: React.FC<any> = (props) => {
         <div className="til">
           <div className="til_head">
             <div className="til_head_todo">오늘 한 일</div>
-            <div className="til_head_st">통계</div>
+            <div
+              className="til_head_st"
+              onClick={(e) => props.click_get_avg(e)}
+            >
+              통계
+            </div>
           </div>
+
+          {/* 통계 보여주는 칸 */}
           <div className="til_select_St">
             <div className="til_week">주간</div>
             <div className="til_month">월간</div>
@@ -42,6 +49,7 @@ const RecordPageComponent: React.FC<any> = (props) => {
             })}
           </div>
         </div>
+
         <Link href="/study">
           <div className="Icon">
             <Icon icon_name="plus" />
