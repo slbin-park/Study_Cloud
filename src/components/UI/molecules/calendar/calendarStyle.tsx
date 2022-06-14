@@ -84,7 +84,6 @@ const Days_style = styled.div.attrs((props) => ({}))<CalendarType>`
     const black = props.theme.palette.$color_black;
     const bgColor = props.bgColor ? 'red' : gray;
     let days_color = 'white';
-    console.log(props.todo_cnt);
     if (props.todo_cnt >= 10) {
       days_color = '#ff6102';
     } else if (props.todo_cnt >= 5) {

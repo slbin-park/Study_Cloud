@@ -37,6 +37,7 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
           text-align: center;
           height: 40px;
           .til_head_todo {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,6 +45,7 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
             border-radius: 5px;
           }
           .til_head_st {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -63,6 +65,7 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
           width: 100%;
           font-size: 17px;
           .til_week {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -71,6 +74,7 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
             ''border-radius: 5px;
           }
           .til_month {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;

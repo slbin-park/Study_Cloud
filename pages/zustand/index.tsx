@@ -10,51 +10,70 @@ import axios from 'axios';
 import moment from 'moment';
 
 const LoginPage: NextPage<any> = ({}) => {
-    const bears = useStore();
-    const user = useStore_user();
-    const record = useStore_record();
-    const modal = useStore_modal();
-    const board = useStore_board();
+  const bears = useStore();
+  const user = useStore_user();
+  const record = useStore_record();
+  const modal = useStore_modal();
+  const board = useStore_board();
 
-    const set_modal = (e)=>{
-      e.preventDefault();
-      modal.set_modal_board();
-      modal.set_modal();
-    }
+  const set_modal = (e) => {
+    e.preventDefault();
+    modal.set_modal_board();
+    modal.set_modal();
+  };
 
-    const get_record = (e) =>{
-      e.preventDefault();
-      e.persist();
-      board.set_reply_data(board.data.board_num)
-      console.log(board)
-      // axios.post("http://localhost:3001/api/board/get_reply",{
-      //   board_num : 1
-      //   },{
-      //       headers : {
-      //           Authorization : user.access_token,
-      //       },
-      //   }).then((res)=>{
-      //       console.log(res.data)
-      //       // moment.duration(t2.diff(t1)).asHours());
-      //   }).catch((err)=>{
-      //       console.log(err)
-      //   })
-    }
+  const get_record = (e) => {
+    e.preventDefault();
+    e.persist();
+    axios
+      .get(
+        'http://localhost:3001/api/board/get-avg/' +
+          user.id +
+          '/' +
+          moment().format('YYYY-MM-DD'),
+        {
+          headers: {
+            Authorization: user.access_token,
+          },
+        },
+      )
+      .then((res) => {
+        console.log(res.data);
+        // console.log(moment(res.data.week.st).format('HH:mm:ss'));
+        console.log(moment(res.data.week.st, 'HH:mm').format('HH:mm 시작'));
+        console.log(moment(res.data.week.et, 'HH:mm').format('HH:mm 종료'));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // board.set_reply_data(board.data.board_num)
+    // console.log(board)
+    // axios.post("http://localhost:3001/api/board/get_reply",{
+    //   board_num : 1
+    //   },{
+    //       headers : {
+    //           Authorization : user.access_token,
+    //       },
+    //   }).then((res)=>{
+    //       console.log(res.data)
+    //       // moment.duration(t2.diff(t1)).asHours());
+    //   }).catch((err)=>{
+    //       console.log(err)
+    //   })
+  };
 
-    const set_zus = (e)=>{
-      e.preventDefault();
-      e.persist();
-      record.getRecord(user);
-    }
+  const set_zus = (e) => {
+    e.preventDefault();
+    e.persist();
+    record.getRecord(user);
+  };
 
-    return (
+  return (
     <>
       <Head>
         <title></title>
       </Head>
-      <div>
-        {bears.time.format('YYYY 년 MM 월 DD 일')}
-      </div>
+      <div>{bears.time.format('YYYY 년 MM 월 DD 일')}</div>
       <div>
         <button onClick={bears.increase_day}>날짜 증가</button>
       </div>
@@ -66,8 +85,6 @@ const LoginPage: NextPage<any> = ({}) => {
       <button onClick={set_zus}> 증가 </button>
       <button onClick={set_modal}> 모달키기 </button>
       <button onClick={get_record}> api테스트 </button>
-
-
     </>
   );
 };
