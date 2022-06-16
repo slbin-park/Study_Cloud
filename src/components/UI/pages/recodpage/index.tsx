@@ -40,22 +40,22 @@ const RecordPage: React.FC<RecordPageType> = (props, {}: RecordPageType) => {
           },
         )
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           // console.log(moment(res.data.week.st).format('HH:mm:ss'));
-          console.log('주간 데이터');
+          // console.log('주간 데이터');
           set_week(res.data.week);
           set_month(res.data.month);
-          console.log(res.data.week.week + '주차');
-          console.log(moment(res.data.week.st, 'HH:mm').format('HH:mm 시작'));
-          console.log(moment(res.data.week.et, 'HH:mm').format('HH:mm 종료'));
-          console.log(parseInt(res.data.week.avg));
-          console.log(parseInt(res.data.week.sum));
+          // console.log(res.data.week.week + '주차');
+          // console.log(moment(res.data.week.st, 'HH:mm').format('HH:mm 시작'));
+          // console.log(moment(res.data.week.et, 'HH:mm').format('HH:mm 종료'));
+          // console.log(parseInt(res.data.week.avg));
+          // console.log(parseInt(res.data.week.sum));
 
-          console.log('월간 데이터');
-          console.log(moment(res.data.month.st, 'HH:mm').format('HH:mm 시작'));
-          console.log(moment(res.data.month.et, 'HH:mm').format('HH:mm 종료'));
-          console.log(parseInt(res.data.month.avg));
-          console.log(parseInt(res.data.month.sum));
+          // console.log('월간 데이터');
+          // console.log(moment(res.data.month.st, 'HH:mm').format('HH:mm 시작'));
+          // console.log(moment(res.data.month.et, 'HH:mm').format('HH:mm 종료'));
+          // console.log(parseInt(res.data.month.avg));
+          // console.log(parseInt(res.data.month.sum));
         })
         .catch((err) => {
           console.log(err);

@@ -62,7 +62,8 @@ const RecordPageComponent: React.FC<any> = (props) => {
                     {props.week !== undefined ? (
                       <>
                         <div>
-                          {props.month.month}월&nbsp;{props.week.week}
+                          {props.month.month}
+                          월&nbsp;{props.week.week}
                           째주는
                         </div>
                         <div className="week_avg">

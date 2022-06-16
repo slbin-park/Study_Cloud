@@ -18,7 +18,7 @@ const BoardPageComponent: React.FC<any> = (props) => {
             <h1>게시판</h1>
           </div>
           <div className="title_right">
-            <Input placeholder="댓글을 입력해주세요."></Input>
+            <Input placeholder="검색"></Input>
             <div className="title_right_icon">
               <FontAwesomeIcon
                 icon={faSearch}

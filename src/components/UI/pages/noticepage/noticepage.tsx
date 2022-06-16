@@ -18,15 +18,15 @@ const NoticePageComponent: React.FC<any> = (props) => {
           </div>
         </div>
         <div className="line_table">
-          {Array(6)
+          {Array(1)
             .fill(0)
             .map((i) => {
               return (
                 <LineText
                   notice="공지사항"
-                  date="2020.20.20"
-                  detail="내용입니다."
-                  comment_num={10}
+                  date="2022.06.10"
+                  detail="첫번째 공지사항입니다."
+                  comment_num={5}
                 />
               );
             })}
