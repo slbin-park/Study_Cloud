@@ -22,7 +22,7 @@ const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
 
     axios
       .post(
-        'http://qkrtmfqls.gabia.io/api/user/register',
+        'https://qkrtmfqls.gabia.io/api/user/register',
         {
           id: data.id,
           password: data.password,

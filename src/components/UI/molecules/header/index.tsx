@@ -19,7 +19,7 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
     if (token) {
       axios
         .post(
-          'http://qkrtmfqls.gabia.io/api/auth/check-refresh',
+          'https://qkrtmfqls.gabia.io/api/auth/check-refresh',
           {
             check: false,
           },

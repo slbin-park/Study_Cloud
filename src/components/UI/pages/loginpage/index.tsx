@@ -21,7 +21,7 @@ const Button: React.FC<LoginPageType> = (props, {}: LoginPageType) => {
 
     axios
       .post(
-        'http://qkrtmfqls.gabia.io/api/auth/login',
+        'https://qkrtmfqls.gabia.io/api/auth/login',
         {
           id: data.id,
           password: data.password,

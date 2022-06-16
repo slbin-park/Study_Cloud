@@ -18,7 +18,7 @@ const MainPage: React.FC<MainPageType> = (props, {}: MainPageType) => {
     if (user.id !== '') {
       axios
         .post(
-          'http://qkrtmfqls.gabia.io/api/board/get_noti',
+          'https://qkrtmfqls.gabia.io/api/board/get_noti',
           {
             id: user.id,
           },

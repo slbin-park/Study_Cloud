@@ -29,7 +29,7 @@ const RecordPage: React.FC<RecordPageType> = (props, {}: RecordPageType) => {
     if (statis) {
       axios
         .get(
-          'http://qkrtmfqls.gabia.io/api/board/get-avg/' +
+          'https://qkrtmfqls.gabia.io/api/board/get-avg/' +
             user.id +
             '/' +
             time.time.format('YYYY-MM-DD'),
