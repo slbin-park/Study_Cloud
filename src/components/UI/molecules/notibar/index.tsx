@@ -18,7 +18,7 @@ const NotiBar: React.FC<NotiBarType> = (props, {}: NotiBarType) => {
     console.log(data);
     axios
       .get(
-        'https://qkrtmfqls.gabia.io/api/board/get-one-board/' +
+        'http://localhost:3001/api/board/get-one-board/' +
           data.noti_num +
           '/' +
           data.reply_id,
@@ -26,7 +26,7 @@ const NotiBar: React.FC<NotiBarType> = (props, {}: NotiBarType) => {
       )
       .then((res) => {
         const noti_data = {
-          ...res.data.board,
+          ...res.data.board[0],
           board_num: data.noti_num,
         };
         router.push('/board');

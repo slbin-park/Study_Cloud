@@ -10,7 +10,7 @@ const BoardPage: React.FC<BoardPageType> = (props, {}: BoardPageType) => {
   useEffect(() => {
     axios
       .post(
-        'https://qkrtmfqls.gabia.io/api/board/get_board',
+        'http://localhost:3001/api/board/get_board',
         {},
         {
           headers: {

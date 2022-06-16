@@ -27,7 +27,7 @@ const LoginPage: NextPage<any> = ({}) => {
     e.persist();
     axios
       .get(
-        'https://qkrtmfqls.gabia.io/api/board/get-avg/' +
+        'http://localhost:3001/api/board/get-avg/' +
           user.id +
           '/' +
           moment().format('YYYY-MM-DD'),

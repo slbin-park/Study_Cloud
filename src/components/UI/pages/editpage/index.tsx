@@ -78,7 +78,7 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
 
     axios
       .post(
-        'https://qkrtmfqls.gabia.io/api/record/' + url,
+        'http://localhost:3001/api/record/' + url,
         {
           id: edit.id,
           start_time: start_time.format('HH:mm:ss'),
@@ -114,7 +114,7 @@ const EditPage: React.FC<EditPageType> = (props, {}: EditPageType) => {
 
     axios
       .post(
-        'https://qkrtmfqls.gabia.io/api/board/save_share',
+        'http://localhost:3001/api/board/save_share',
         {
           id: edit.id,
           post_num: edit.post_num,
