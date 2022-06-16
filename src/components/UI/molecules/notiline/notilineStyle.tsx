@@ -21,7 +21,7 @@ const NotiLineStyle = styled.div.attrs((props) => ({}))<NotiLineType>`
         width: 35px;
         height: 35px;
         color: ${middle};
-        margin-right: 5px;
+        margin-right: 3px;
       }
       .noti_title {
         font-weight: bold;

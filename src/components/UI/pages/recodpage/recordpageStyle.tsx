@@ -5,6 +5,32 @@ import { RecordPageType } from './recordpageType';
 const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
+    let todo: string;
+    let st: string;
+    let week: string;
+    let month: string;
+    if (props.statis) {
+      st = `
+          color: white;
+          background-color: ${middle};
+          `;
+    } else {
+      todo = `
+          color: white;
+          background-color: ${middle};
+          `;
+    }
+
+    if (!props.week_month) {
+      week = `
+            border-bottom: 4px solid ${middle};
+          `;
+    } else {
+      month = `
+            border-bottom: 4px solid ${middle};
+          `;
+    }
+
     return css`
       .Icon {
         color: ${middle};
@@ -36,6 +62,7 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
           justify-content: center;
           text-align: center;
           height: 40px;
+          /* 오늘 한 일 */
           .til_head_todo {
             cursor: pointer;
             display: flex;
@@ -43,19 +70,21 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
             align-items: center;
             width: 40%;
             border-radius: 5px;
+            ${todo}
           }
+          /* 통계 */
           .til_head_st {
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 40%;
-            color: white;
-            background-color: ${middle};
             border-radius: 5px;
+            ${st}
           }
         }
 
+        /* 주간 , 월간 */
         .til_select_St {
           height: 30px;
           margin-top: 10px;
@@ -70,8 +99,8 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
             justify-content: center;
             align-items: center;
             width: 10%;
-            border-bottom: 4px solid ${middle};
-            ''border-radius: 5px;
+            border-radius: 5px;
+            ${week}
           }
           .til_month {
             cursor: pointer;
@@ -80,9 +109,31 @@ const RecordPageStyle = styled.div.attrs((props) => ({}))<RecordPageType>`
             align-items: center;
             border-radius: 5px;
             width: 10%;
+            ${month}
           }
         }
 
+        /* 통계 보여주는 박스 */
+        .study_avg {
+          padding: 10px;
+          width: 100%;
+          display: flex;
+          padding-left: 30%;
+          .week_avg {
+            display: flex;
+            .week_text {
+              font-weight: bold;
+              color: ${middle};
+              display: flex;
+            }
+          }
+          .week_all {
+            display: flex;
+            .minute_color {
+              color: ${middle};
+            }
+          }
+        }
         .til_card {
           width: 80%;
         }
