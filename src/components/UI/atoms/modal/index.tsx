@@ -52,7 +52,7 @@ const Button: React.FC<ModalType> = (props, {}: ModalType) => {
     console.log(board.data);
     axios
       .post(
-        'http://localhost:3001/api/board/save_reply',
+        'http://qkrtmfqls.gabia.io/api/board/save_reply',
         {
           data,
         },

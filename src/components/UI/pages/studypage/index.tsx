@@ -72,7 +72,7 @@ const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) => {
 
     axios
       .post(
-        'http://localhost:3001/api/record/save',
+        'http://qkrtmfqls.gabia.io/api/record/save',
         {
           id: user.id,
           date: time.time.format('YYYYMMDD'),

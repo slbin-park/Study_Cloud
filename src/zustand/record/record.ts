@@ -7,7 +7,7 @@ const useStore = createStore<any>((set) => ({
   getRecord: async (user) => {
     axios
       .post(
-        'http://localhost:3001/api/record/get',
+        'http://qkrtmfqls.gabia.io/api/record/get',
         {
           id: user.id,
         },
