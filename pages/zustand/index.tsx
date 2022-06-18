@@ -27,14 +27,15 @@ const LoginPage: NextPage<any> = ({}) => {
     e.persist();
     axios
       .get(
-        'http://localhost:3001/api/board/get-avg/' +
-          user.id +
+        'http://qkrtmfqls.gabia.io/api/board/get-avg/' +
+          `smpts00` +
           '/' +
           moment().format('YYYY-MM-DD'),
         {
           headers: {
             Authorization: user.access_token,
           },
+          withCredentials: true,
         },
       )
       .then((res) => {
