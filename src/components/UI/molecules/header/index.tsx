@@ -19,7 +19,7 @@ const Header: React.FC<HeaderType> = (props, {}: HeaderType) => {
     if (token) {
       axios
         .post(
-          'http://localhost:3001/api/auth/check-refresh',
+          process.env.NEXT_PUBLIC_BASE_URL + '/api/auth/check-refresh',
           {
             check: false,
           },

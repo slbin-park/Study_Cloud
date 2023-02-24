@@ -22,7 +22,7 @@ const Button: React.FC<RegisterPageType> = (props, {}: RegisterPageType) => {
 
     axios
       .post(
-        'http://localhost:3001/api/user/register',
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/user/register',
         {
           id: data.id,
           password: data.password,

@@ -21,7 +21,7 @@ const Button: React.FC<LoginPageType> = (props, {}: LoginPageType) => {
 
     axios
       .post(
-        'http://localhost:3001/api/auth/login',
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/auth/login',
         {
           id: data.id,
           password: data.password,

@@ -8,6 +8,7 @@
   box-sizing: border-box;
   word-break: keep-all;
   -ms-overflow-style: none;
+  transition: all ease 2s 0s;
 }
 
 ::-webkit-scrollbar {

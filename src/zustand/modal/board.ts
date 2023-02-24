@@ -1,6 +1,6 @@
 import createStore from 'zustand';
 import axios from 'axios';
-const url = 'http://localhost:3001/api/board/get_reply';
+const url = process.env.NEXT_PUBLIC_BASE_URL + 'api/board/get_reply';
 const useStore = createStore<any>((set) => ({
   data: {
     board_num: 1,

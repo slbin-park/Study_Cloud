@@ -29,7 +29,8 @@ const RecordPage: React.FC<RecordPageType> = (props, {}: RecordPageType) => {
     if (statis) {
       axios
         .get(
-          'http://localhost:3001/api/board/get-avg/' +
+          process.env.NEXT_PUBLIC_BASE_URL +
+            '/api/board/get-avg/' +
             user.id +
             '/' +
             time.time.format('YYYY-MM-DD'),

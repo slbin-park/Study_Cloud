@@ -27,7 +27,8 @@ const LoginPage: NextPage<any> = ({}) => {
     e.persist();
     axios
       .get(
-        'http://qkrtmfqls.gabia.io/api/board/get-avg/' +
+        process.env.NEXT_PUBLIC_BASE_URL +
+          '/api/board/get-avg/' +
           `smpts00` +
           '/' +
           moment().format('YYYY-MM-DD'),
@@ -47,20 +48,6 @@ const LoginPage: NextPage<any> = ({}) => {
       .catch((err) => {
         console.log(err);
       });
-    // board.set_reply_data(board.data.board_num)
-    // console.log(board)
-    // axios.post("http://localhost:3001/api/board/get_reply",{
-    //   board_num : 1
-    //   },{
-    //       headers : {
-    //           Authorization : user.access_token,
-    //       },
-    //   }).then((res)=>{
-    //       console.log(res.data)
-    //       // moment.duration(t2.diff(t1)).asHours());
-    //   }).catch((err)=>{
-    //       console.log(err)
-    //   })
   };
 
   const set_zus = (e) => {

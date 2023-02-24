@@ -18,7 +18,7 @@ const MainPage: React.FC<MainPageType> = (props, {}: MainPageType) => {
     if (user.id !== '') {
       axios
         .post(
-          'http://localhost:3001/api/board/get_noti',
+          process.env.NEXT_PUBLIC_BASE_URL + '/api/board/get_noti',
           {
             id: user.id,
           },

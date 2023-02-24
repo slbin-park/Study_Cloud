@@ -10,7 +10,7 @@ const BoardPage: React.FC<BoardPageType> = (props, {}: BoardPageType) => {
   useEffect(() => {
     axios
       .post(
-        'http://localhost:3001/api/board/get_board',
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/board/get_board`,
         {},
         {
           headers: {

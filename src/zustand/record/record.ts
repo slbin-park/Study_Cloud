@@ -7,7 +7,7 @@ const useStore = createStore<any>((set) => ({
   getRecord: async (user) => {
     axios
       .post(
-        'http://localhost:3001/api/record/get',
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/record/get',
         {
           id: user.id,
         },

@@ -72,7 +72,7 @@ const Button: React.FC<StudyPageType> = (props, {}: StudyPageType) => {
 
     axios
       .post(
-        'http://localhost:3001/api/record/save',
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/record/save',
         {
           id: user.id,
           date: time.time.format('YYYYMMDD'),
