@@ -6,7 +6,7 @@ import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'; // fill �
 import {} from '@fortawesome/free-regular-svg-icons'; // outline 타입 아이콘
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // HOC
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 import StyledHeader from './headerStyle';
 import Atoms, { Input } from '../../atoms/index';
 import Molecules, { Board, IconText, NavBar } from '../../molecules/index';

@@ -13,7 +13,12 @@ import Molecules, { IconText } from '../../molecules/index';
 const NavBarComponent: React.FC<any> = (props) => {
   return (
     <>
-      <NavBarStyle onClick={() => props.set_hamburger(false)} {...props}>
+      <NavBarStyle
+        {...props}
+        onClick={() => {
+          props.set_hamburger((prev) => !prev);
+        }}
+      >
         <div className="menu">
           <IconText icon="user" href="/" />
           <IconText icon="notice" href="/notice" />
