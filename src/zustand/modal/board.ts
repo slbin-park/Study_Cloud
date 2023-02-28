@@ -1,6 +1,6 @@
 import createStore from 'zustand';
 import axios from 'axios';
-const url = process.env.NEXT_PUBLIC_BASE_URL + 'api/board/get_reply';
+const url = process.env.NEXT_PUBLIC_BASE_URL + '/api/board/get_reply';
 const useStore = createStore<any>((set) => ({
   data: {
     board_num: 1,
@@ -15,6 +15,7 @@ const useStore = createStore<any>((set) => ({
   set_data: (data: any) => set((state) => ({ data })),
   reply: [],
   set_reply_data: async (board_num: number) => {
+    console.log(url);
     const response = await axios.post(url, {
       board_num,
     });

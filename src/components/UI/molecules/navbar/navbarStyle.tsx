@@ -5,7 +5,7 @@ import { NavBarType } from './navbarType';
 const NavBarStyle = styled.div.attrs((props) => ({}))<NavBarType>`
   ${(props) => {
     const middle = props.theme.palette.$color_middle;
-    const appear = props.hamburger ? '0%' : '30%';
+    const appear = props.hamburger ? '30%' : '0%';
     const animation = keyframes`
         0% {
             width: 10%;
